@@ -80,7 +80,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #0f766e;
+    color: #0b7e74;
 }
 
 /* Base Letter Container for Swap Effect */
@@ -190,7 +190,9 @@ nav a:hover .letter-swap-char-alt {
     letter-spacing: 0.3px;
     transition: all 0.3s ease;
     border: 1px solid #1e293b;
+    margin-right: 50px;
 }
+
 
 /* SIDEBAR */
 .sidebar {
@@ -1151,4 +1153,151 @@ footer {
     .trusted-cards-grid { grid-template-columns: 1fr; }
     .shader-grid { grid-template-columns: 1fr; }
     .footer-links { flex-direction: column; gap: 24px; }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #ffffff;
+  margin: 0;
+  padding: 40px 24px;
+}
+
+.new-exciting {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fire-icon {
+  font-size: 22px;
+}
+
+.section-header p {
+  font-size: 15px;
+  color: #5f6368;
+  margin: 0 0 24px 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background: #fff;
+}
+
+.card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card-top h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.icon-blue {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.icon-purple {
+  background: #f3e8fd;
+  color: #8430ce;
+}
+
+.icon-teal {
+  background: #e3f7f5;
+  color: #12a397;
+}
+
+.icon-gold {
+  background: #fdf3e3;
+  color: #d19a1f;
+}
+
+.tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.card p {
+  font-size: 14px;
+  color: #5f6368;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Sahi spelling: border-box */
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden;
 }
