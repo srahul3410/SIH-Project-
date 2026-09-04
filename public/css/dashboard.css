@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fc;
+    color: #20243a;
+}
+a {
+    text-decoration: none;
+}
+button,
+input {
+    font-family: inherit;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard {
+    min-height: 100vh;
+}
+
+/* ================ SIDEBAR ================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100vh;
+    background: white;
+    border-right: 1px solid #e9e9ef;
+    padding: 20px 13px;
+    overflow-y: auto;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 7px 28px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: #5540d7;
+    color: white;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-text h3 {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.logo-text span {
+    font-size: 7px;
+    color: #999;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    margin-bottom: 3px;
+    border-radius: 7px;
+    color: #626778;
+    font-size: 11px;
+    transition: 0.2s;
+}
+
+.menu i {
+    width: 15px;
+    font-size: 12px;
+}
+
+.menu:hover {
+    background: #f0edff;
+    color: #5540d7;
+}
+
+.menu.active {
+    background: #5940dc;
+    color: white;
+}
+
+.menu-title {
+    color: #a0a3ae;
+    font-size: 8px;
+    font-weight: bold;
+    margin: 20px 12px 8px;
+}
+
+.settings-title {
+    margin-top: 28px;
+}
+
+.logout {
+    margin-top: 3px;
+}
+
+/* ================= MAIN ================= */
+.main-content {
+    margin-left: 230px;
+    min-height: 100vh;
+}
+
+/* ================= TOPBAR ================= */
+.topbar {
+    height: 65px;
+    background: white;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+/* SEARCH */
+.search-box {
+    width: 350px;
+    height: 35px;
+    border: 1px solid #e6e6eb;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+}
+
+.search-box i {
+    color: #aaa;
+    font-size: 11px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    color: #333;
+}
+
+/* RIGHT */
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+/* NOTIFICATION */
+.notification {
+    position: relative;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.notification span {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 14px;
+    height: 14px;
+    background: #ef566d;
+    color: white;
+    border-radius: 50%;
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* USER */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #e9e5ff;
+    color: #5841d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 9px;
+}
+
+.user-info small {
+    display: block;
+    color: #999;
+    font-size: 8px;
+    margin-top: 3px;
+}
+
+/* ================= CONTENT ================= */
+.content {
+    padding: 25px 30px;
+}
+
+/* ================= GREETING ================= */
+.greeting {
+    margin-bottom: 22px;
+}
+.greeting h1 {
+    font-size: 23px;
+    margin-bottom: 7px;
+}
+.greeting p {
+    font-size: 10px;
+    color: #888;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: white;
+    border: 1px solid #ebebef;
+    border-radius: 9px;
+    padding: 17px;
+}
+
+/* ================= TOP CARDS ================= */
+.top-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.25fr;
+    gap: 14px;
+}
+
+/* CARD HEADER */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555;
+    font-size: 10px;
+    margin-bottom: 12px;
+}
+
+.card-header i {
+    color: #aaa;
+}
+.card-header a {
+    color: #5941d5;
+    font-size: 8px;
+}
+
+/* PROFILE */
+.percentage {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin-bottom: 11px;
+}
+.percentage strong {
+    font-size: 24px;
+}
+.percentage span {
+    color: #999;
+    font-size: 8px;
+}
+
+.progress {
+    width: 100%;
+    height: 6px;
+    background: #eeeeef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 13px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #5940dc;
+    border-radius: 10px;
+}
+
+.profile-card a {
+    font-size: 8px;
+    color: #5940dc;
+}
+
+/* ================= CIRCLE ================= */
+.skill-card {
+    text-align: center;
+}
+
+.skill-card .card-header {
+    text-align: left;
+}
+
+.circle {
+    width: 95px;
+    height: 95px;
+    margin: 3px auto 0;
+    border-radius: 50%;
+    background:
+        conic-gradient(
+            #42a45b 0deg 120deg,
+            #477de4 120deg 250deg,
+            #e9e9ed 250deg 360deg
+        );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-inner {
+    width: 74px;
+    height: 74px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.circle-inner strong {
+    font-size: 20px;
+}
+.circle-inner span {
+    color: #999;
+    font-size: 7px;
+    margin-top: 3px;
+}
+
+/* ================= TOP SKILLS ================= */
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    margin: 13px 0;
+}
+.skill-item > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.green {
+    background: #38a27a;
+}
+.dot.blue {
+    background: #4c72dc;
+}
+.dot.purple {
+    background: #7453db;
+}
+.skill-item strong {
+    font-size: 9px;
+}
+
+/* ================= MIDDLE ================= */
+.middle-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+/* SECTION HEADER */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.section-header h2 {
+    font-size: 13px;
+}
+.section-header p {
+    font-size: 8px;
+    color: #999;
+    margin-top: 4px;
+}
+.section-header a {
+    color: #5941d5;
+    font-size: 8px;
+}
+
+/* ================= JOB ================= */
+.job {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid #eeeeee;
+}
+.company-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.google {
+    background: #f1f1f1;
+    color: #4285f4;
+}
+.microsoft {
+    background: #edf4ff;
+    color: #3977d8;
+}
+.job-info {
+    flex: 1;
+}
+.job-info h3 {
+    font-size: 10px;
+    margin-bottom: 4px;
+}
+.job-info p {
+    color: #777;
+    font-size: 8px;
+    margin-bottom: 7px;
+}
+.job-meta {
+    display: flex;
+    gap: 10px;
+    color: #999;
+    font-size: 7px;
+}
+.job-meta span {
+    white-space: nowrap;
+}
+.apply-btn {
+    border: none;
+    background: #573ed8;
+    color: white;
+    border-radius: 5px;
+    padding: 7px 11px;
+    font-size: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.apply-btn:hover {
+    background: #402bb9;
+}
+
+/* ================= DEADLINES ================= */
+.deadline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-top: 1px solid #eeeeee;
+}
+.deadline-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+.deadline-icon.purple {
+    background: #eeeaff;
+    color: #6047d8;
+}
+.deadline-icon.green {
+    background: #e9f7ee;
+    color: #3b9c61;
+}
+.deadline-icon.orange {
+    background: #fff1df;
+    color: #e29535;
+}
+.deadline-info {
+    flex: 1;
+}
+.deadline-info strong {
+    display: block;
+    font-size: 9px;
+    margin-bottom: 4px;
+}
+.deadline-info small {
+    display: block;
+    font-size: 7px;
+    color: #999;
+}
+.deadline > span {
+    font-size: 7px;
+    color: #df5269;
+    white-space: nowrap;
+}
+
+/* ================= BOTTOM ================= */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+/* ACTIVITY */
+.activity {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 0;
+    border-top: 1px solid #eeeeee;
+}
+.activity > i {
+    color: #5941d5;
+    margin-top: 2px;
+    font-size: 11px;
+}
+.activity p {
+    font-size: 9px;
+    margin-bottom: 4px;
+}
+.activity small {
+    color: #999;
+    font-size: 7px;
+}
+
+/* ================= QUOTE ================= */
+.quote-card {
+    background: #f0edff;
+    border-radius: 9px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.quote-card h2 {
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.quote-card p {
+    color: #777;
+    font-size: 8px;
+    margin-top: 9px;
+}
+.quote-icon {
+    color: #6651d8;
+    font-size: 55px;
+}
+
+/* ================ RESPONSIVE ================= */
+@media (max-width: 1000px) {
+    .sidebar {
+        width: 200px;
+    }
+    .main-content {
+        margin-left: 200px;
+    }
+    .top-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+    .top-skills-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 750px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .top-cards,
+    .middle-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+    .top-skills-card {
+        grid-column: auto;
+    }
+    .search-box {
+        width: 220px;
+    }
+}
+
+@media (max-width: 500px) {
+    .content {
+        padding: 20px 15px;
+    }
+    .topbar {
+        padding: 0 15px;
+    }
+    .search-box {
+        width: 160px;
+    }
+    .user-info div:last-child {
+        display: none;
+    }
+    .job-meta {
+        flex-direction: column;
+        gap: 3px;
+    }
+}

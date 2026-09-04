@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/css/edit.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+    <aside class="sidebar">
+
+        <h2>🎓 AIC Portal</h2>
+
+        <a href="../../overview/index.html">Dashboard</a>
+        <a href="../view/index.html">My Profile</a>
+        <a href="../../skill-assessment/index.html">
+            Skill Assessment
+        </a>
+
+        <a href="../../skill-mapping/index.html">
+            Skill Mapping
+        </a>
+
+        <a href="../../opportunities/index.html">
+            Opportunities
+        </a>
+
+        <a href="../../applications/index.html">
+            Applications
+        </a>
+
+        <a href="../../messages/index.html">
+            Messages
+        </a>
+
+        <a href="../../learning/index.html">
+            Learning
+        </a>
+
+    </aside>
+
+
+    <main class="main">
+
+        <div class="heading">
+
+            <div>
+                <h1>Edit Profile</h1>
+                <p>Update your information and links</p>
+            </div>
+
+            <button id="saveBtn">
+                Save Changes
+            </button>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <h3>Basic Information</h3>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        value="Saniya Siddique"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Course</label>
+
+                    <input
+                        type="text"
+                        value="B.Tech CSE"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Year</label>
+
+                    <select>
+
+                        <option>1st Year</option>
+                        <option selected>2nd Year</option>
+                        <option>3rd Year</option>
+                        <option>4th Year</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Location</label>
+
+                    <input
+                        type="text"
+                        value="Lucknow, Uttar Pradesh"
+                    >
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label>About Me</label>
+
+                    <textarea
+                        rows="5"
+                    >Passionate about solving real-world problems through code. I enjoy working on full-stack development and exploring new technologies.</textarea>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <h3>Social & Professional Links</h3>
+
+
+            <div class="link-row">
+
+                <label>LinkedIn</label>
+
+                <input
+                    type="url"
+                    value="https://linkedin.com/in/saniya"
+                >
+
+            </div>
+
+
+            <div class="link-row">
+
+                <label>GitHub</label>
+
+                <input
+                    type="url"
+                    value="https://github.com/saniyacodes"
+                >
+
+            </div>
+
+
+            <div class="link-row">
+
+                <label>LeetCode</label>
+
+                <input
+                    type="url"
+                    value="https://leetcode.com/saniya"
+                >
+
+            </div>
+
+
+            <div class="link-row">
+
+                <label>CodeChef</label>
+
+                <input
+                    type="url"
+                    value="https://codechef.com/users/saniya"
+                >
+
+            </div>
+
+
+            <button class="add-link" id="addLink">
+                + Add New Link
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

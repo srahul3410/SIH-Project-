@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skill Assessment</title>
+
+    <link rel="stylesheet" href="/css/skill.css">
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+
+            <h2>🎓 AIC Portal</h2>
+
+            <a href="../overview/index.html">Dashboard</a>
+            <a href="../profile/view/index.html">My Profile</a>
+
+            <a class="active" href="#">
+                Skill Assessment
+            </a>
+
+            <a href="../skill-mapping/index.html">
+                Skill Mapping
+            </a>
+
+            <a href="../opportunities/index.html">
+                Opportunities
+            </a>
+
+            <a href="../applications/index.html">
+                Applications
+            </a>
+
+            <a href="../messages/index.html">
+                Messages
+            </a>
+
+            <a href="../learning/index.html">
+                Learning
+            </a>
+
+        </aside>
+
+
+        <main class="main">
+
+            <h1>Skill Assessment</h1>
+
+            <p class="subtitle">
+                Assess your technical and soft skills
+            </p>
+
+
+            <div class="assessment-card">
+
+                <div class="icon">
+                    📝
+                </div>
+
+                <h2>Technical Skills Assessment</h2>
+
+                <p>
+                    Test your knowledge in programming, web development,
+                    database and computer science fundamentals.
+                </p>
+
+                <div class="info">
+
+                    <span>20 Questions</span>
+                    <span>30 Minutes</span>
+                    <span>Intermediate</span>
+
+                </div>
+
+                <button id="startBtn">
+                    Start Assessment
+                </button>
+
+            </div>
+
+
+            <div class="assessment-card">
+
+                <div class="icon">
+                    🤝
+                </div>
+
+                <h2>Soft Skills Assessment</h2>
+
+                <p>
+                    Evaluate communication, leadership, teamwork and
+                    problem-solving skills.
+                </p>
+
+                <div class="info">
+
+                    <span>15 Questions</span>
+                    <span>20 Minutes</span>
+                    <span>General</span>
+
+                </div>
+
+                <button class="secondary">
+                    Start Assessment
+                </button>
+
+            </div>
+
+
+            <div id="quiz" class="quiz hidden">
+
+                <h2 id="question">
+                    Question
+                </h2>
+
+                <div id="options"></div>
+
+                <button id="nextBtn">
+                    Next
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="skill.js"></script>
+
+</body>
+
+</html>

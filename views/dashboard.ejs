@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+<div class="dashboard">
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+      <!-- Logo -->
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="logo-text">
+                <h3>AIC Portal</h3>
+                <span>Bridging Academia & Industry</span>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <a href="#" class="menu active">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <!-- Main -->
+        <div class="menu-title">
+            MAIN
+        </div>
+
+        <a href="../profile/profile.html" class="menu">
+            <i class="fa-regular fa-user"></i>
+            <span>My Profile</span>
+        </a>
+
+        <a href="../skill-ass/skill.html" class="menu">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>Skill Assessment</span>
+        </a>
+
+        <a href="../skill-map/skillm.html" class="menu">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>Skill Mapping</span>
+        </a>
+
+        <a href="../opportunity/opp.html" class="menu">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Opportunities</span>
+        </a>
+
+        <a href="../applications/index.html" class="menu">
+            <i class="fa-regular fa-file-lines"></i>
+            <span>Applications</span>
+        </a>
+
+        <a href="../messages/index.html" class="menu">
+            <i class="fa-regular fa-message"></i>
+            <span>Messages</span>
+        </a>
+
+        <a href="../learning/index.html" class="menu">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Learning</span>
+        </a>
+
+        <!-- Settings -->
+        <div class="menu-title settings-title">
+            SETTINGS
+        </div>
+
+        <a href="../settings/index.html" class="menu">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+        <a href="#" class="menu">
+            <i class="fa-regular fa-circle-question"></i>
+            <span>Help & Support</span>
+        </a>
+
+        <a href="#" class="menu logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main class="main-content">
+        <!-- ================= TOPBAR ================= -->
+        <header class="topbar">
+            <!-- Search -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search opportunities, skills..."
+                >
+            </div>
+
+            <!-- Right -->
+            <div class="top-right">
+
+                <!-- Notification -->
+                <button
+                    class="notification"
+                    id="notificationBtn"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span>1</span>
+                </button>
+
+                <!-- User -->
+                <div class="user-info">
+                    <div class="user-avatar">
+                        S
+                    </div>
+                    <div>
+                        <strong>Welcome, <%=user.name %> </strong>
+                        <small>Student</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= PAGE CONTENT ================= -->
+        <section class="content">
+
+            <!-- Greeting -->
+            <div class="greeting">
+                <div>
+                    <h1>
+                        Welcome, <%=user.name %>&hearts;
+                    </h1>
+                    <p>
+                        Ready to explore new opportunities today?
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- ================= TOP CARDS ================= -->
+            <div class="top-cards">
+
+                <!-- Profile Completion -->
+                <div class="card profile-card">
+                    <div class="card-header">
+                        <span>
+                            Profile Completion
+                        </span>
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                    <div class="percentage">
+                        <strong>82%</strong>
+                        <span>Complete</span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-fill"
+                            style="width:82%"
+                        ></div>
+                    </div>
+
+                    <a href="../profile/edit/index.html">
+                        Complete Profile →
+                    </a>
+                </div>
+
+                <!-- Skill Strength -->
+                <div class="card skill-card">
+                    <div class="card-header">
+                        <span>
+                            Skill Strength
+                        </span>
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+
+                    <div class="circle">
+                        <div class="circle-inner">
+                            <strong>78%</strong>
+                            <span>Overall Score</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Skills -->
+                <div class="card top-skills-card">
+                    <div class="card-header">
+                        <span>
+                            Top Skills
+                        </span>
+                        <a href="../skill-mapping/index.html">
+                            View All
+                        </a>
+                    </div>
+
+                    <div class="skill-item">
+                        <div>
+                            <span class="dot green"></span>
+                            Problem Solving
+                        </div>
+                        <strong>85%</strong>
+                    </div>
+                    <div class="skill-item">
+                        <div>
+                            <span class="dot blue"></span>
+                            Web Development
+                        </div>
+                        <strong>80%</strong>
+                    </div>
+
+                    <div class="skill-item">
+                        <div>
+                            <span class="dot purple"></span>
+                            Data Structures
+                        </div>
+                        <strong>75%</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= MIDDLE SECTION ================= -->
+            <div class="middle-grid">
+
+                <!-- Recommended -->
+                <div class="card recommended-card">
+                    <div class="section-header">
+                        <div>
+                            <h2>
+                                Recommended for You
+                            </h2>
+                            <p>
+                                Based on your skills and interests
+                            </p>
+                        </div>
+                        <a href="../opportunities/index.html">
+                            View All
+                        </a>
+                    </div>
+
+                    <!-- Google -->
+                    <div class="job">
+                        <div class="company-logo google">
+                            G
+                        </div>
+                        <div class="job-info">
+                            <h3>
+                                Backend Developer Intern
+                            </h3>
+                            <p>
+                                Google
+                            </p>
+                            <div class="job-meta">
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Bangalore
+                                </span>
+                                <span>
+                                    <i class="fa-regular fa-clock"></i>
+                                    6 months
+                                </span>
+                                <span>
+                                    ₹25,000 / month
+                                </span>
+                            </div>
+                        </div>
+
+                        <button class="apply-btn">
+                            Apply Now
+                        </button>
+                    </div>
+
+                    <!-- Microsoft -->
+                    <div class="job">
+                        <div class="company-logo microsoft">
+                            <i class="fa-brands fa-microsoft"></i>
+                        </div>
+
+                        <div class="job-info">
+                            <h3>
+                                SDE Intern
+                            </h3>
+                            <p>
+                                Microsoft
+                            </p>
+                            <div class="job-meta">
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Hyderabad
+                                </span>
+                                <span>
+                                    <i class="fa-regular fa-clock"></i>
+                                    6 months
+                                </span>
+                                <span>
+                                    ₹30,000 / month
+                                </span>
+                            </div>
+                        </div>
+
+                        <button class="apply-btn">
+                            Apply Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Upcoming Deadlines -->
+                <div class="card deadline-card">
+                    <div class="section-header">
+                        <h2>
+                            Upcoming Deadlines
+                        </h2>
+                        <a href="../opportunities/index.html">
+                            View All
+                        </a>
+                    </div>
+
+                    <!-- Deadline 1 -->
+                    <div class="deadline">
+                        <div class="deadline-icon purple">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <div class="deadline-info">
+                            <strong>
+                                TCS Digital Hiring
+                            </strong>
+                            <small>
+                                Application Deadline
+                            </small>
+                        </div>
+
+                        <span>
+                            20 May 2025
+                        </span>
+                    </div>
+
+                    <!-- Deadline 2 -->
+                    <div class="deadline">
+                        <div class="deadline-icon green">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <div class="deadline-info">
+                            <strong>
+                                Internship Application
+                            </strong>
+                            <small>
+                                Application Deadline
+                            </small>
+                        </div>
+                        <span>
+                            25 May 2025
+                        </span>
+                    </div>
+
+                    <!-- Deadline 3 -->
+                    <div class="deadline">
+                        <div class="deadline-icon orange">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="deadline-info">
+                            <strong>
+                                Google Summer of Code
+                            </strong>
+                            <small>
+                                Registration Deadline
+                            </small>
+                        </div>
+                        <span>
+                            30 May 2025
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= BOTTOM ================= -->
+            <div class="bottom-grid">
+                <!-- Recent Activity -->
+                <div class="card activity-card">
+                    <div class="section-header">
+                        <h2>
+                            Recent Activity
+                        </h2>
+                    </div>
+                    <div class="activity">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <div>
+                            <p>
+                                You applied for Backend Developer
+                                Intern at Google
+                            </p>
+                            <small>
+                                2 days ago
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        <div>
+                            <p>
+                                Skill Assessment completed
+                            </p>
+                            <small>
+                                5 days ago
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote -->
+                <div class="quote-card">
+                    <div>
+                        <h2>
+                            The future depends on
+                            what you do today.
+                        </h2>
+                        <p>
+                            — Mahatma Gandhi
+                        </p>
+                    </div>
+                    <div class="quote-icon">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="front.js"></script>
+</body>
+</html>
