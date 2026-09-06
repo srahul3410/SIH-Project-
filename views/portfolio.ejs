@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidyaSetu | Digital Portfolio</title>
+    <link rel="stylesheet" href="/css/portfolio.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<div class="portfolio-layout">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-logo">VS</div>
+            <div class="brand-text">
+                <h2>VidyaSetu</h2>
+                <span>Connecting × Learning</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <p class="nav-title">MAIN</p>
+                <a href="/dashboard" class="nav-item">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/skillmatch" class="nav-item">
+                    <i data-lucide="clipboard-check"></i>
+                    <span>Skill Analysis</span>
+                </a>
+                <a href="/skillmatch" class="nav-item">
+                    <i data-lucide="map"></i>
+                    <span>Skill Map & Career</span>
+                </a>
+                <a href="/learning" class="nav-item">
+                    <i data-lucide="book-open"></i>
+                    <span>Learning </span>
+                </a>
+                <a href="/internship" class="nav-item">
+                    <i data-lucide="briefcase"></i>
+                    <span>Internships</span>
+                </a>
+                <a href="/placement" class="nav-item">
+                    <i data-lucide="building-2"></i>
+                    <span>Placements</span>
+                </a>
+                <a href="/portfolio" class="nav-item active">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Portfolio</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <p class="nav-title">ACADEMICIANS</p>
+                <a href="#" class="nav-item">
+                    <i data-lucide="graduation-cap"></i>
+                    <span>Faculty Opportunities</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="presentation"></i>
+                    <span>FDPs & Training</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="flask-conical"></i>
+                    <span>Research & Projects</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <p class="nav-title">COLLABORATION</p>
+                <a href="#" class="nav-item">
+                    <i data-lucide="users"></i>
+                    <span>Mentorship</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="calendar-days"></i>
+                    <span>Workshops & Events</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="folder-open"></i>
+                    <span>Live Projects</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="lightbulb"></i>
+                    <span>Innovation Challenges</span>
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <p class="nav-title">ANALYTICS</p>
+                <a href="#" class="nav-item">
+                    <i data-lucide="bar-chart-3"></i>
+                    <span>Dashboards</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="file-text"></i>
+                    <span>Reports & Insights</span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="sidebar-help">
+            <div class="help-icon">
+                <i data-lucide="headphones"></i>
+            </div>
+            <div>
+                <strong>Need Help?</strong>
+                <p>Our support team is here to help you 24/7</p>
+            </div>
+            <button>Contact Support</button>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <button class="menu-button" id="menuButton" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input type="text" placeholder="Search opportunities, skills, programs, people...">
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-button notification">
+                    <i data-lucide="bell"></i>
+                    <span>1</span>
+                </button>
+                <button class="icon-button">
+                    <i data-lucide="mail"></i>
+                </button>
+                <div class="profile">
+                    <div class="profile-avatar" id="topNavAvatar">AK</div>
+                    <div class="profile-info">
+                        <strong id="topNavName">Abhay Kumar</strong>
+                        <span>Student</span>
+                    </div>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header">
+                <div>
+                    <h1>My Digital Portfolio</h1>
+                    <p>Showcase your skills, projects, experience and education</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn-outline"><i data-lucide="eye"></i> Preview Portfolio</button>
+                    <button class="btn-outline"><i data-lucide="share-2"></i> Share Portfolio</button>
+                    <button class="btn-primary" id="openEditBtn"><i data-lucide="pencil"></i> Edit Profile & Education</button>
+                </div>
+            </div>
+
+            <!-- PROFILE HERO CARD (Direct Photo Upload Enabled) -->
+            <section class="profile-hero-card">
+                <div class="hero-left">
+                    <div class="profile-img-wrap" id="directAvatarTrigger" title="Click to change profile picture">
+                        <img id="userImg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Student Profile">
+                        <div class="avatar-hover-overlay">
+                            <i data-lucide="camera"></i>
+                            <span>Change</span>
+                        </div>
+                    </div>
+                    <!-- Hidden direct file input for avatar -->
+                    <input type="file" id="directAvatarInput" accept="image/*" style="display: none;">
+
+                    <div class="hero-info">
+                        <h2 id="userName">Abhay Kumar</h2>
+                        <h4 id="userDegree">B.Tech Computer Science and Engineering</h4>
+                        <p id="userBio">Click 'Edit Profile & Education' to add your bio and career interests.</p>
+
+                        <div class="contact-chips">
+                            <span><i data-lucide="map-pin"></i> <span id="userLocation">Set Location</span></span>
+                            <span><i data-lucide="mail"></i> <span id="userEmail">abhaykumar@email.com</span></span>
+                            <span><i data-lucide="phone"></i> <span id="userPhone">+91 Add Phone</span></span>
+                        </div>
+
+                        <div class="hero-socials">
+                            <a href="#" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="social-icon" title="Portfolio"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-details">
+                    <div class="detail-group">
+                        <span>College / University</span>
+                        <strong id="userCollege">SRM University</strong>
+                    </div>
+                    <div class="detail-group">
+                        <span>Year</span>
+                        <strong id="userYear">3rd Year (2025 - 2029)</strong>
+                    </div>
+                    <div class="detail-group">
+                        <span>Branch</span>
+                        <strong id="userBranch">Computer Science & Engineering</strong>
+                    </div>
+                    <div class="detail-group">
+                        <span>Specialization</span>
+                        <strong id="userSpec">Data Science & AI</strong>
+                    </div>
+                    <div class="detail-group">
+                        <span>CGPA</span>
+                        <strong id="userCgpa">8.26 / 10</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NAVIGATION TABS -->
+            <nav class="portfolio-tabs">
+                <button class="tab-btn active" data-tab="projects">Projects</button>
+                <button class="tab-btn" data-tab="skills">Skills</button>
+                <button class="tab-btn" data-tab="certifications">Certifications</button>
+                <button class="tab-btn" data-tab="internships">Internships</button>
+                <button class="tab-btn" data-tab="experience">Experience</button>
+                <button class="tab-btn" data-tab="education">Education</button>
+            </nav>
+
+            <!-- MAIN GRID -->
+            <div class="portfolio-grid">
+
+                <!-- LEFT COLUMN -->
+                <div class="grid-left">
+
+                    <!-- TAB 1: PROJECTS -->
+                    <div class="tab-pane active" id="tab-projects">
+                        <section class="card section-card">
+                            <div class="card-head">
+                                <h3>Featured Projects</h3>
+                                <button class="btn-sm-primary" id="openAddProjectBtn"><i data-lucide="plus"></i> Add Project</button>
+                            </div>
+                            <div class="projects-grid" id="projectsContainer"></div>
+                            <div class="empty-state-box" id="emptyProjectsState">
+                                <i data-lucide="folder-code"></i>
+                                <h4>No projects added yet</h4>
+                                <p>Click "+ Add Project" to add your project name, photo, description, and links.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- TAB 2: SKILLS -->
+                    <div class="tab-pane" id="tab-skills">
+                        <section class="card section-card">
+                            <div class="card-head">
+                                <h3>Technical & Soft Skills</h3>
+                                <button class="btn-sm-primary" id="openAddSkillBtn"><i data-lucide="plus"></i> Add Skill</button>
+                            </div>
+                            <div class="skills-chips-wrapper" id="skillsContainer"></div>
+                            <div class="empty-state-box" id="emptySkillsState">
+                                <i data-lucide="cpu"></i>
+                                <h4>No skills added yet</h4>
+                                <p>Click "+ Add Skill" to list your programming languages, tools, or libraries.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- TAB 3: CERTIFICATIONS -->
+                    <div class="tab-pane" id="tab-certifications">
+                        <section class="card section-card">
+                            <div class="card-head">
+                                <h3>Licenses & Certifications</h3>
+                                <button class="btn-sm-primary" id="openAddCertBtn"><i data-lucide="plus"></i> Add Certificate</button>
+                            </div>
+                            <div class="certifications-list" id="certificationsContainer"></div>
+                            <div class="empty-state-box" id="emptyCertsState">
+                                <i data-lucide="award"></i>
+                                <h4>No certificates added yet</h4>
+                                <p>Click "+ Add Certificate" to display your credentials.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- TAB 4: INTERNSHIPS -->
+                    <div class="tab-pane" id="tab-internships">
+                        <section class="card section-card">
+                            <div class="card-head">
+                                <h3>Internships & Completed Certificates</h3>
+                                <button class="btn-sm-primary" id="openAddInternBtn"><i data-lucide="plus"></i> Add Internship</button>
+                            </div>
+
+                            <div class="internships-grid" id="internshipsContainer"></div>
+
+                            <div class="empty-state-box" id="emptyInternState">
+                                <i data-lucide="briefcase"></i>
+                                <h4>No internships added yet</h4>
+                                <p>Click "+ Add Internship" to enter the company name and upload your completion certificate photo.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- TAB 5: EXPERIENCE -->
+                    <div class="tab-pane" id="tab-experience">
+                        <section class="card section-card">
+                            <div class="card-head">
+                                <h3>Work Experience</h3>
+                                <button class="btn-sm-primary" id="openAddExpBtn"><i data-lucide="plus"></i> Add Experience</button>
+                            </div>
+                            <div class="experience-list" id="experienceContainer"></div>
+                            <div class="empty-state-box" id="emptyExpState">
+                                <i data-lucide="briefcase"></i>
+                                <h4>No work experience added yet</h4>
+                                <p>Click "+ Add Experience" to add company name, role, and total duration.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- TAB 6: EDUCATION -->
+                    <div class="tab-pane" id="tab-education">
+                        <section class="card section-card">
+                            <div class="card-head">
+                                <h3>Education Background</h3>
+                            </div>
+                            <div class="education-stack">
+                                <!-- University -->
+                                <div class="education-card-item">
+                                    <div class="edu-icon"><i data-lucide="graduation-cap"></i></div>
+                                    <div class="edu-content">
+                                        <div class="edu-top">
+                                            <h4 id="eduCollege">SRM University</h4>
+                                            <span class="edu-badge">Higher Education</span>
+                                        </div>
+                                        <span id="eduDegree">B.Tech in Computer Science & Engineering</span>
+                                        <p id="eduDuration">2025 - 2029 • CGPA: 8.26 / 10</p>
+                                    </div>
+                                </div>
+
+                                <!-- 12th Intermediate -->
+                                <div class="education-card-item">
+                                    <div class="edu-icon"><i data-lucide="school"></i></div>
+                                    <div class="edu-content">
+                                        <div class="edu-top">
+                                            <h4 id="edu12School">Senior Secondary School (12th)</h4>
+                                            <span class="edu-badge">Class XII</span>
+                                        </div>
+                                        <span id="edu12Board">CBSE / Science (PCM)</span>
+                                        <p id="edu12Details">Passing Year: 2024 • Score: 88%</p>
+                                    </div>
+                                </div>
+
+                                <!-- 10th High Schooling -->
+                                <div class="education-card-item">
+                                    <div class="edu-icon"><i data-lucide="book-open"></i></div>
+                                    <div class="edu-content">
+                                        <div class="edu-top">
+                                            <h4 id="edu10School">High School (10th)</h4>
+                                            <span class="edu-badge">Class X</span>
+                                        </div>
+                                        <span id="edu10Board">CBSE Board</span>
+                                        <p id="edu10Details">Passing Year: 2022 • Score: 92%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <aside class="grid-right">
+
+                    <!-- Profile Strength -->
+                    <div class="card side-card">
+                        <h3>Profile Strength</h3>
+                        <div class="strength-content">
+                            <div class="strength-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle class="c-bg" cx="50" cy="50" r="42"></circle>
+                                    <circle class="c-prog" id="strengthSvgCircle" cx="50" cy="50" r="42"></circle>
+                                </svg>
+                                <strong id="strengthScore">20%</strong>
+                            </div>
+                            <div class="strength-checklist">
+                                <div id="chk-info"><i class="fa-solid fa-circle-check"></i> Basic Information</div>
+                                <div id="chk-skills"><i class="fa-regular fa-circle"></i> Skills</div>
+                                <div id="chk-projects"><i class="fa-regular fa-circle"></i> Projects</div>
+                                <div id="chk-interns"><i class="fa-regular fa-circle"></i> Internships</div>
+                                <div id="chk-exp"><i class="fa-regular fa-circle"></i> Experience</div>
+                            </div>
+                        </div>
+                        <div class="strength-tag">
+                            <strong id="strengthLabel">Beginner</strong>
+                            <p id="strengthHint">Add projects, skills, and internships to boost your profile.</p>
+                        </div>
+                    </div>
+
+                    <!-- Resume Card -->
+                    <div class="card side-card">
+                        <h3>Resume</h3>
+                        <span class="sub-date">Upload your latest PDF</span>
+                        <div class="resume-item">
+                            <i data-lucide="file-text"></i>
+                            <div>
+                                <strong id="resumeName">Student_Resume.pdf</strong>
+                                <span>PDF Document</span>
+                            </div>
+                        </div>
+                        <input type="file" id="resumeUploadInput" style="display: none;" accept=".pdf">
+                        <button class="btn-download" id="uploadResumeBtn"><i data-lucide="upload"></i> Upload / Replace Resume</button>
+                    </div>
+
+                    <!-- Let's Connect -->
+                    <div class="card side-card">
+                        <h3>Let's Connect</h3>
+                        <div class="social-grid">
+                            <a href="#" class="connect-box" target="_blank">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="connect-box" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="connect-box">
+                                <i data-lucide="mail"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="#" class="connect-box" target="_blank">
+                                <i data-lucide="globe"></i>
+                                <span>Website</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+
+            <!-- ================= CALL TO ACTION BANNER & FOOTER ================= -->
+            <div class="cta-banner">
+                <div class="cta-content">
+                    <span class="cta-label">LET'S CONNECT</span>
+                    <h3>Interested in working together?</h3>
+                    <p>Feel free to reach out for opportunities, collaborations or networking.</p>
+                </div>
+                <a href="mailto:abhaykumar@email.com" class="btn-cta-contact">
+                    Contact Me <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="portfolio-footer">
+                <div class="footer-left">
+                    <div class="footer-logo">VS</div>
+                    <span>Powered by VidyaSetu</span>
+                </div>
+                <div class="footer-right">
+                    <span>© 2026 VidyaSetu. All rights reserved.</span>
+                </div>
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- ================= MODAL 1: EDIT PROFILE & SCHOOLING (WITH PHOTO PICKER) ================= -->
+<div class="modal-overlay" id="editModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>Edit Profile & Schooling Details</h3>
+            <button class="close-btn" id="closeEditBtn"><i data-lucide="x"></i></button>
+        </div>
+        <form id="portfolioEditForm" class="modal-body">
+            <h4 class="modal-section-title">Personal Info & Profile Photo</h4>
+            
+            <!-- Choose Profile Photo from Device OR URL -->
+            <div class="form-group">
+                <label>Profile Picture</label>
+                <div class="photo-uploader-box">
+                    <div class="upload-options-row">
+                        <label for="inputAvatarFile" class="file-pick-btn">
+                            <i data-lucide="image"></i> Choose Photo from Device
+                        </label>
+                        <input type="file" id="inputAvatarFile" accept="image/*" style="display: none;">
+                        <span>OR</span>
+                        <input type="text" id="inputImg" placeholder="Paste image web link...">
+                    </div>
+                    <div class="preview-area" id="avatarPreviewArea" style="display: none;">
+                        <img id="avatarPreviewImg" src="" alt="Avatar Preview" class="profile-preview-thumb">
+                        <button type="button" id="removeAvatarBtn" class="remove-photo-btn"><i data-lucide="trash-2"></i> Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="inputName" required>
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="inputLocation">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="inputEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" id="inputPhone">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Professional Bio</label>
+                <textarea id="inputBio" rows="2" required></textarea>
+            </div>
+
+            <h4 class="modal-section-title">1. University / College</h4>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>University / College Name</label>
+                    <input type="text" id="inputCollege" required>
+                </div>
+                <div class="form-group">
+                    <label>Degree / Qualification</label>
+                    <input type="text" id="inputDegree" required>
+                </div>
+            </div>
+
+            <div class="form-row three-col">
+                <div class="form-group">
+                    <label>Duration / Year</label>
+                    <input type="text" id="inputYear">
+                </div>
+                <div class="form-group">
+                    <label>Branch</label>
+                    <input type="text" id="inputBranch">
+                </div>
+                <div class="form-group">
+                    <label>CGPA</label>
+                    <input type="text" id="inputCgpa">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Specialization</label>
+                <input type="text" id="inputSpec">
+            </div>
+
+            <h4 class="modal-section-title">2. Class 12th Intermediate Schooling</h4>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>12th School Name</label>
+                    <input type="text" id="input12School" placeholder="Enter school name">
+                </div>
+                <div class="form-group">
+                    <label>Board / Stream</label>
+                    <input type="text" id="input12Board" placeholder="e.g. CBSE / Science">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Passing Year</label>
+                    <input type="text" id="input12Year" placeholder="e.g. 2024">
+                </div>
+                <div class="form-group">
+                    <label>Percentage / Marks</label>
+                    <input type="text" id="input12Score" placeholder="e.g. 88%">
+                </div>
+            </div>
+
+            <h4 class="modal-section-title">3. Class 10th High Schooling</h4>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>10th School Name</label>
+                    <input type="text" id="input10School" placeholder="Enter school name">
+                </div>
+                <div class="form-group">
+                    <label>Board</label>
+                    <input type="text" id="input10Board" placeholder="e.g. CBSE / ICSE">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Passing Year</label>
+                    <input type="text" id="input10Year" placeholder="e.g. 2022">
+                </div>
+                <div class="form-group">
+                    <label>Percentage / Marks</label>
+                    <input type="text" id="input10Score" placeholder="e.g. 92%">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-outline" id="cancelModalBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ================= MODAL 2: ADD PROJECT ================= -->
+<div class="modal-overlay" id="addProjectModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>Add New Project</h3>
+            <button class="close-btn" id="closeAddProjectBtn"><i data-lucide="x"></i></button>
+        </div>
+        <form id="addProjectForm" class="modal-body">
+            <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" id="pTitle" placeholder="e.g. Student Management System" required>
+            </div>
+
+            <div class="form-group">
+                <label>Project Photo</label>
+                <div class="photo-uploader-box">
+                    <div class="upload-options-row">
+                        <label for="pPhotoFile" class="file-pick-btn">
+                            <i data-lucide="image"></i> Choose Photo from Device
+                        </label>
+                        <input type="file" id="pPhotoFile" accept="image/*" style="display: none;">
+                        <span>OR</span>
+                        <input type="text" id="pImg" placeholder="Paste Image URL link...">
+                    </div>
+                    
+                    <div class="preview-area" id="previewArea" style="display: none;">
+                        <img id="projectPreviewImg" src="" alt="Selected Preview">
+                        <button type="button" id="removePhotoBtn" class="remove-photo-btn"><i data-lucide="trash-2"></i> Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Project Description</label>
+                <textarea id="pDesc" rows="3" placeholder="Briefly explain what this project does..." required></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>GitHub Repository URL</label>
+                    <input type="text" id="pGithub" placeholder="https://github.com/..." value="#">
+                </div>
+                <div class="form-group">
+                    <label>Live Demo / Website URL</label>
+                    <input type="text" id="pDemo" placeholder="https://..." value="#">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-outline" id="cancelAddProjectBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Add Project</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ================= MODAL 3: ADD INTERNSHIP ================= -->
+<div class="modal-overlay" id="addInternModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>Add Completed Internship</h3>
+            <button class="close-btn" id="closeAddInternBtn"><i data-lucide="x"></i></button>
+        </div>
+        <form id="addInternForm" class="modal-body">
+            <div class="form-group">
+                <label>Company / Organization Name</label>
+                <input type="text" id="internCompany" placeholder="e.g. Microsoft, Google, TCS, Infosys" required>
+            </div>
+
+            <div class="form-group">
+                <label>Internship Completion Certificate Photo</label>
+                <div class="photo-uploader-box">
+                    <div class="upload-options-row">
+                        <label for="internCertFile" class="file-pick-btn">
+                            <i data-lucide="file-check"></i> Choose Certificate Photo
+                        </label>
+                        <input type="file" id="internCertFile" accept="image/*" style="display: none;">
+                        <span>OR</span>
+                        <input type="text" id="internCertUrl" placeholder="Paste Certificate Image link...">
+                    </div>
+                    
+                    <div class="preview-area" id="internPreviewArea" style="display: none;">
+                        <img id="internPreviewImg" src="" alt="Certificate Preview">
+                        <button type="button" id="removeInternCertBtn" class="remove-photo-btn"><i data-lucide="trash-2"></i> Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-outline" id="cancelAddInternBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Save Internship</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ================= MODAL 4: ADD WORK EXPERIENCE ================= -->
+<div class="modal-overlay" id="addExpModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>Add Work Experience</h3>
+            <button class="close-btn" id="closeAddExpBtn"><i data-lucide="x"></i></button>
+        </div>
+        <form id="addExpForm" class="modal-body">
+            <div class="form-group">
+                <label>Company / Workplace Name</label>
+                <input type="text" id="expCompany" placeholder="e.g. Infosys / Tech Solutions" required>
+            </div>
+
+            <div class="form-group">
+                <label>Job Title / Role</label>
+                <input type="text" id="expRole" placeholder="e.g. Frontend Developer / Software Engineer" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Duration / Total Years</label>
+                    <input type="text" id="expDuration" placeholder="e.g. 2 Years (2024 - 2026)" required>
+                </div>
+                <div class="form-group">
+                    <label>Employment Type</label>
+                    <select id="expType" class="form-select">
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Freelance">Freelance</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-outline" id="cancelAddExpBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Save Experience</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ================= MODAL 5: ADD SKILL ================= -->
+<div class="modal-overlay" id="addSkillModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>Add New Skill</h3>
+            <button class="close-btn" id="closeAddSkillBtn"><i data-lucide="x"></i></button>
+        </div>
+        <form id="addSkillForm" class="modal-body">
+            <div class="form-group">
+                <label>Skill Name</label>
+                <input type="text" id="skillNameInput" placeholder="e.g. C++, React, Python, MySQL" required>
+            </div>
+            <div class="form-group">
+                <label>Proficiency Level</label>
+                <select id="skillLevelInput" class="form-select">
+                    <option value="Advanced">Advanced (85-95%)</option>
+                    <option value="Intermediate" selected>Intermediate (70-80%)</option>
+                    <option value="Beginner">Beginner (50-60%)</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-outline" id="cancelAddSkillBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Add Skill</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- ================= MODAL 6: ADD CERTIFICATE ================= -->
+<div class="modal-overlay" id="addCertModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>Add Certificate</h3>
+            <button class="close-btn" id="closeAddCertBtn"><i data-lucide="x"></i></button>
+        </div>
+        <form id="addCertForm" class="modal-body">
+            <div class="form-group">
+                <label>Certificate Title</label>
+                <input type="text" id="certTitle" placeholder="e.g. Meta Front-End Developer" required>
+            </div>
+
+            <div class="form-group">
+                <label>Issuing Organization</label>
+                <input type="text" id="certOrg" placeholder="e.g. Coursera, AWS, HackerRank" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Issue Date</label>
+                    <input type="text" id="certDate" placeholder="e.g. May 2025" required>
+                </div>
+                <div class="form-group">
+                    <label>Credential ID / Verification Link</label>
+                    <input type="text" id="certId" placeholder="e.g. CERT-987123" required>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-outline" id="cancelAddCertBtn">Cancel</button>
+                <button type="submit" class="btn-primary">Add Certificate</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/portfolio.js"></script>
+</body>
+</html>

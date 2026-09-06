@@ -51,32 +51,76 @@ app.get("/signup", (req, res) => {
 });
 
 
-app.post("/signup", async (req, res) => {
-    const { name, email, password } = req.body;
-    console.log(req.body);
-    const newUser = new User({
-        name,
-        email,
-        password
-    });
+// app.post("/signup", async (req, res) => {
+//     const { name, email, password } = req.body;
+//     console.log(req.body);
+//     const newUser = new User({
+//         name,
+//         email,
+//         password
+//     });
+//     await newUser.save();
+//     req.session.userId = newUser._id;
+//     res.redirect("/dashboard");
+// });
 
-    await newUser.save();
-    req.session.userId = newUser._id;
-    res.redirect("/dashboard");
+app.post("/signup", async (req, res) => {
+    try {
+        const { name, email, password } = req.body;
+        console.log("SIGNUP DATA:", req.body);
+        const existingUser = await User.findOne({ email: email });
+        if (existingUser) {
+            return res.send("Email already registered. Please login.");
+        }
+        const newUser = new User({
+            name,
+            email,
+            password
+        });
+        await newUser.save();
+        console.log("USER SAVED:", newUser);
+        req.session.userId = newUser._id;
+        res.redirect("/dashboard");
+    } catch (err) {
+        console.log("SIGNUP ERROR:", err);
+        res.status(500).send("Signup failed");
+    }
 });
 
-app.post("/login", async (req, res) => {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
 
-    if (!user) {
-        return res.redirect("/login?error=signup");
+// app.post("/login", async (req, res) => {
+//     const { email, password } = req.body;
+//     const user = await User.findOne({ email });
+//     if (!user) {
+//         return res.redirect("/login?error=signup");
+//     }
+//     if (user.password !== password) {
+//         return res.redirect("/login?error=wrongpassword");
+//     }
+//     req.session.userId = user._id;
+//     res.redirect("/dashboard");
+// });
+
+app.post("/login", async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        console.log("LOGIN EMAIL:", email);
+        console.log("LOGIN PASSWORD:", password);
+        const user = await User.findOne({ email: email });
+        console.log("FOUND USER:", user);
+        if (!user) {
+            return res.redirect("/login?error=signup");
+        }
+        if (user.password !== password) {
+            return res.redirect("/login?error=wrongpassword");
+        }
+        req.session.userId = user._id;
+        console.log("LOGIN SUCCESS:", user._id);
+        res.redirect("/dashboard");
+    } catch (err) {
+        console.log("LOGIN ERROR:", err);
+        res.status(500).send("Login failed");
     }
-    if (user.password !== password) {
-        return res.redirect("/login?error=wrongpassword");
-    }
-    req.session.userId = user._id;
-    res.redirect("/dashboard");
 });
 
 app.get("/dashboard", async (req, res) => {
@@ -90,6 +134,7 @@ app.get("/dashboard", async (req, res) => {
     }
     res.render("dashboard", { user });
 });
+
 app.get("/profile", (req, res)=>{
     res.render("profile");
 });

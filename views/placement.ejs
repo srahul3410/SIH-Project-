@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VidyaSetu - Placement Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/placement.css" />
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo-area">
+        <div class="logo-box">VS</div>
+        <div class="logo-details">
+          <h2>VidyaSetu</h2>
+          <span>Connecting × Learning</span>
+        </div>
+      </div>
+
+      <div class="menu-divider-line"></div>
+
+      <div class="nav-group">
+        <span class="nav-heading">MAIN</span>
+        <ul class="nav-items">
+          <li class="nav-item"><a href="/dashboard">Dashboard</a></li>
+          <li class="nav-item"><a href="/skillmatch">Skill Analysis</a></li>
+          <li class="nav-item"><a href="/skillmatch">Skill </a></li>
+          <li class="nav-item"><a href="/learning">Learning Programs</a></li>
+          <li class="nav-item"><a href="/internship">Internships</a></li>
+          <li class="nav-item active-nav"><a href="/placement">Placements</a></li>
+          <li class="nav-item"><a href="/portfolio">Digital Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <span class="nav-heading">ACADEMICIANS</span>
+        <ul class="nav-items">
+          <li class="nav-item"><a href="#">Faculty Opportunities</a></li>
+          <li class="nav-item"><a href="#">FDPs & Training</a></li>
+          <li class="nav-item"><a href="#">Research & Projects</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN BODY -->
+    <div class="main-body-container">
+      
+      <!-- TOP NAVBAR -->
+      <header class="top-nav">
+        <div class="left-nav-side">
+          <div class="search-field">
+            <input type="text" placeholder="Search opportunities, skills, programs, people..." />
+          </div>
+        </div>
+        <div class="right-nav-side">
+          <div class="profile-card">
+            <div class="avatar-circle">AK</div>
+            <div class="profile-meta">
+              <span class="user-realname">Abhay Kumar</span>
+              <span class="user-role">Student</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="main-content-scroll">
+        
+        <!-- TOP 2 CARDS -->
+        <section class="cards-row-two">
+          
+          <!-- Eligible Opportunities Card -->
+          <div class="metric-card interactive-card" onclick="openEligibleModal()">
+            <div class="circle-icon-box mint-bg">
+              <svg viewBox="0 0 24 24" class="svg-mint" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <div class="metric-data">
+              <span class="metric-header-title">Eligible Opportunities</span>
+              <span class="metric-main-count" id="count-eligible">18</span>
+              <span class="metric-sub-trend trend-green">↑ 4 new this week</span>
+            </div>
+          </div>
+
+          <!-- Interviews Given Card -->
+          <div class="metric-card interactive-card" onclick="openInterviewSelectionModal()">
+            <div class="circle-icon-box blue-bg">
+              <svg viewBox="0 0 24 24" class="svg-blue" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="metric-data" style="flex: 1;">
+              <span class="metric-header-title">Interviews Given / Rounds</span>
+              <span class="metric-main-count" id="count-interviews">2</span>
+              <span class="metric-sub-trend trend-neutral">Click to select companies & rounds</span>
+            </div>
+            <button class="side-drawer-icon-btn" onclick="event.stopPropagation(); toggleInterviewDrawer();" title="View Progress Drawer">📊</button>
+          </div>
+
+        </section>
+
+        <!-- PLACEMENT CONTENT SECTION -->
+        <section class="portal-grid-section">
+          
+          <!-- Left: Placement Opportunities (Now with 5+ listed drives matching eligibility style) -->
+          <div class="portal-card-large">
+            <div class="card-title-row">
+              <div>
+                <h2>Placement Opportunities</h2>
+                <p class="subtitle-text">Verified against your CGPA, Technical Skills, and Language Proficiency.</p>
+              </div>
+              <a href="#" class="view-link" onclick="openEligibleModal()">View All (18) →</a>
+            </div>
+
+            <!-- Drive 1: Microsoft -->
+            <div class="placement-row">
+              <div class="company-badge ms-color">
+                <div class="quad red"></div><div class="quad green"></div>
+                <div class="quad blue"></div><div class="quad yellow"></div>
+              </div>
+              <div class="placement-details">
+                <div class="job-header">
+                  <h3>Software Engineer (Full-Time)</h3>
+                  <span class="package-tag">₹18 - 22 LPA</span>
+                </div>
+                <p class="comp-location">Microsoft • Bengaluru, India</p>
+                <div class="eligibility-criteria-bar">
+                  <div class="crit-badge crit-pass">✓ CGPA: <strong>7.5+</strong></div>
+                  <div class="crit-badge crit-pass">✓ English: <strong>Fluent (C1)</strong></div>
+                </div>
+                <div class="chip-tags">
+                  <span class="tag-title">Skills:</span><span>C++</span><span>DSA</span><span>System Design</span>
+                </div>
+              </div>
+              <button class="action-teal-btn" onclick="openCriteriaModal(101)">Check Eligibility</button>
+            </div>
+
+            <!-- Drive 2: TCS -->
+            <div class="placement-row">
+              <div class="company-badge tcs-color">TCS</div>
+              <div class="placement-details">
+                <div class="job-header">
+                  <h3>Graduate Engineer Trainee</h3>
+                  <span class="package-tag">₹7 - 9 LPA</span>
+                </div>
+                <p class="comp-location">Tata Consultancy Services • Mumbai</p>
+                <div class="eligibility-criteria-bar">
+                  <div class="crit-badge crit-pass">✓ CGPA: <strong>6.5+</strong></div>
+                  <div class="crit-badge crit-pass">✓ English: <strong>Intermediate</strong></div>
+                </div>
+                <div class="chip-tags">
+                  <span class="tag-title">Skills:</span><span>Java</span><span>SQL</span><span>OOP</span>
+                </div>
+              </div>
+              <button class="action-teal-btn" onclick="openCriteriaModal(102)">Check Eligibility</button>
+            </div>
+
+            <!-- Drive 3: Google (Newly Added) -->
+            <div class="placement-row">
+              <div class="company-badge google-color">G</div>
+              <div class="placement-details">
+                <div class="job-header">
+                  <h3>Associate Cloud Engineer</h3>
+                  <span class="package-tag">₹22 - 28 LPA</span>
+                </div>
+                <p class="comp-location">Google • Hyderabad, India</p>
+                <div class="eligibility-criteria-bar">
+                  <div class="crit-badge crit-pass">✓ CGPA: <strong>8.0+</strong></div>
+                  <div class="crit-badge crit-pass">✓ English: <strong>Fluent (C1)</strong></div>
+                </div>
+                <div class="chip-tags">
+                  <span class="tag-title">Skills:</span><span>GCP</span><span>Networking</span><span>Go</span>
+                </div>
+              </div>
+              <button class="action-teal-btn" onclick="openCriteriaModal(104)">Check Eligibility</button>
+            </div>
+
+            <!-- Drive 4: Amazon (Newly Added) -->
+            <div class="placement-row">
+              <div class="company-badge amazon-color">a</div>
+              <div class="placement-details">
+                <div class="job-header">
+                  <h3>SDE Intern & FTE</h3>
+                  <span class="package-tag">₹24 - 30 LPA</span>
+                </div>
+                <p class="comp-location">Amazon • Bengaluru, India</p>
+                <div class="eligibility-criteria-bar">
+                  <div class="crit-badge crit-pass">✓ CGPA: <strong>7.8+</strong></div>
+                  <div class="crit-badge crit-pass">✓ English: <strong>Fluent (C1)</strong></div>
+                </div>
+                <div class="chip-tags">
+                  <span class="tag-title">Skills:</span><span>Data Structures</span><span>Java</span><span>AWS</span>
+                </div>
+              </div>
+              <button class="action-teal-btn" onclick="openCriteriaModal(105)">Check Eligibility</button>
+            </div>
+
+            <!-- Drive 5: Infosys (Newly Added) -->
+            <div class="placement-row">
+              <div class="company-badge infosys-color">In</div>
+              <div class="placement-details">
+                <div class="job-header">
+                  <h3>Specialist Programmer</h3>
+                  <span class="package-tag">₹9.5 LPA</span>
+                </div>
+                <p class="comp-location">Infosys • Pune, India</p>
+                <div class="eligibility-criteria-bar">
+                  <div class="crit-badge crit-pass">✓ CGPA: <strong>6.8+</strong></div>
+                  <div class="crit-badge crit-pass">✓ English: <strong>Conversational</strong></div>
+                </div>
+                <div class="chip-tags">
+                  <span class="tag-title">Skills:</span><span>Java</span><span>DSA</span><span>DBMS</span>
+                </div>
+              </div>
+              <button class="action-teal-btn" onclick="openCriteriaModal(106)">Check Eligibility</button>
+            </div>
+
+          </div>
+
+          <!-- Right: Profile Card (With Multi-Languages) -->
+          <div class="portal-card-small">
+            <div class="card-title-row">
+              <h2>Your Eligibility Profile</h2>
+              <span class="status-verified-tag">✓ Verified</span>
+            </div>
+
+            <div class="eligibility-profile-box">
+              <div class="profile-crit-item">
+                <div class="crit-head"><span>Current CGPA</span><span>8.4 / 10.0</span></div>
+                <div class="track-bar"><div class="fill-bar" style="width: 84%;"></div></div>
+                <span class="crit-hint">Eligible for 98% of campus drives</span>
+              </div>
+
+              <div class="profile-crit-item">
+                <div class="crit-head"><span>Spoken Languages Proficiency</span><span class="val-green">3 Verified</span></div>
+                <div class="language-chips-wrap">
+                  <div class="lang-pill mandatory">
+                    <span class="lang-dot dot-green"></span>
+                    <span class="lang-name">English</span>
+                    <span class="lang-level">Fluent (C1)</span>
+                    <span class="req-tag">Required</span>
+                  </div>
+                  <div class="lang-pill bonus">
+                    <span class="lang-dot dot-teal"></span>
+                    <span class="lang-name">Hindi</span>
+                    <span class="lang-level">Native</span>
+                  </div>
+                  <div class="lang-pill bonus">
+                    <span class="lang-dot dot-blue"></span>
+                    <span class="lang-name">German</span>
+                    <span class="lang-level">Intermediate (B1)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="profile-crit-item">
+                <div class="crit-head"><span>Verified Skills</span><span>4 Matched</span></div>
+                <div class="chips-flex">
+                  <span class="crit-chip matched">✓ DSA</span>
+                  <span class="crit-chip matched">✓ C++</span>
+                  <span class="crit-chip matched">✓ Python</span>
+                  <span class="crit-chip matched">✓ SQL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="prep-footer-notice">
+              <p>📌 <strong>Drive Rule:</strong> Minimum 7.0 CGPA, B2/C1 Spoken English, and DSA/Python are required. Additional foreign languages offer an extra edge.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================== SIDE DRAWER (Interview Progress) ==================== -->
+  <div class="side-drawer-backdrop" id="interview-drawer" onclick="toggleInterviewDrawer()">
+    <div class="side-drawer-panel" onclick="event.stopPropagation()">
+      <div class="drawer-header">
+        <h3>Interview Progress & Rounds</h3>
+        <button class="modal-close" onclick="toggleInterviewDrawer()">&times;</button>
+      </div>
+      <div class="drawer-body" id="drawer-rounds-content"></div>
+    </div>
+  </div>
+
+  <!-- ==================== POPUP MODALS ==================== -->
+
+  <!-- Modal 1: Eligible Opportunities -->
+  <div class="modal-backdrop" id="modal-eligible">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div><h3>All Eligible Opportunities (18)</h3></div>
+        <button class="modal-close" onclick="closeModal('modal-eligible')">&times;</button>
+      </div>
+      <div class="modal-body" id="eligible-list-container"></div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Interview Selection & Rounds Reached -->
+  <div class="modal-backdrop" id="modal-interview-selection">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3>Select Companies & Round Reached</h3>
+          <p class="modal-sub">Check the companies you gave interviews for and select up to which round you advanced.</p>
+        </div>
+        <button class="modal-close" onclick="closeModal('modal-interview-selection')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="interview-selection-container" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;"></div>
+        <button class="action-teal-btn" style="width: 100%;" onclick="saveInterviewSelections()">Save & Update Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Criteria Breakdown -->
+  <div class="modal-backdrop" id="modal-criteria">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="crit-company-title">Criteria Breakdown</h3>
+        <button class="modal-close" onclick="closeModal('modal-criteria')">&times;</button>
+      </div>
+      <div class="modal-body" id="criteria-modal-content"></div>
+    </div>
+  </div>
+
+  <script src="/js/placement.js"></script>
+</body>
+</html>
