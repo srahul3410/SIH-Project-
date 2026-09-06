@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programming Language Proficiency Quiz</title>
+  <link rel="stylesheet" href="/css/test.css">
+  <!-- FontAwesome Icons for Dashboard Cards -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="quiz-container">
+    <header>
+      <h1>Programming Skill Analyzer</h1>
+      <p>Answer the questions below to evaluate language proficiency levels.</p>
+    </header>
+
+    <!-- Quiz Form Section -->
+    <form id="quiz-form">
+      <div id="questions-wrapper"></div>
+      <button type="submit" id="submit-btn">Submit Quiz & Analyze Skills</button>
+    </form>
+
+    <!-- Result / Analysis Section (Page 2) -->
+    <div id="result-card" class="hidden">
+      <h2>Skill Analysis Result</h2>
+      <p class="summary-text">Based on your responses, here is the breakdown of proficiency per language:</p>
+      
+      <!-- Progress Bars -->
+      <div id="scores-container"></div>
+
+      <!-- New Feature Options -->
+      <div class="features-grid">
+        
+        <!-- Feature 1: Open Learning Platform -->
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Learning Platform</h3>
+          <p>Access personalized tutorials and courses curated for your weak spots.</p>
+          <a href="https://github.com" target="_blank" class="feature-btn">Open Platform &rarr;</a>
+        </div>
+
+        <!-- Feature 2: Skill Mapping -->
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>Skill Mapping</h3>
+          <p>Visualize your current skill stack against industry career roadmaps.</p>
+          <button class="feature-btn" onclick="toggleSkillMap()">View Map &rarr;</button>
+        </div>
+
+      </div>
+
+      <!-- Skill Map Preview (Hidden by default) -->
+      <div id="skill-map-modal" class="hidden-box">
+        <h4>Skill Roadmap Mapping</h4>
+        <div class="roadmap-tags">
+          <span class="tag tag-core">Python Basics</span>
+          <span class="tag tag-next">FastAPI / Django</span>
+          <span class="tag tag-core">JavaScript ES6</span>
+          <span class="tag tag-next">React / Node.js</span>
+          <span class="tag tag-core">C++ Pointers</span>
+          <span class="tag tag-next">System Design</span>
+        </div>
+      </div>
+
+      <button id="restart-btn" onclick="location.reload()">Retake Quiz</button>
+    </div>
+  </div>
+
+  <script src="/js/test.js"></script>
+</body>
+</html>

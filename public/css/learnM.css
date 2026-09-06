@@ -1,0 +1,112 @@
+/* ===== VidyaSetu — "Features" section styles =====
+   Classes are prefixed "vs-" so they won't clash with the rest
+   of vidyasetu.com. Merge this into your main stylesheet, or
+   keep it as its own file and link it in <head>. */
+
+#features{
+  font-family:'Inter',sans-serif;
+  background:#F8FAFC;
+  padding:100px 8vw 110px;
+}
+#features *{box-sizing:border-box;}
+
+.vs-feat-head{text-align:center;max-width:640px;margin:0 auto 60px;}
+.vs-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#CCFBF1;color:#0F766E;
+  padding:7px 16px;border-radius:999px;
+  font-size:13px;font-weight:600;
+  margin-bottom:22px;
+}
+.vs-badge .dot{width:7px;height:7px;border-radius:50%;background:#0F766E;}
+.vs-feat-head h2{
+  font-family:'Poppins',sans-serif;font-weight:800;
+  font-size:clamp(30px,4vw,42px);line-height:1.15;
+  color:#0F172A;letter-spacing:-0.01em;
+}
+.vs-feat-head h2 span{color:#0F9488;}
+.vs-feat-head p{margin-top:16px;color:#64748B;font-size:16px;line-height:1.6;}
+
+/* ---- spotlight: bidirectional skill <-> job matching ---- */
+.vs-spotlight{
+  max-width:1080px;margin:0 auto 28px;
+  background:#0F172A;border-radius:24px;
+  display:grid;grid-template-columns:1fr 1fr;
+  overflow:hidden;
+}
+.vs-spotlight-text{padding:48px 46px;}
+.vs-spotlight-tag{
+  display:inline-block;background:rgba(94,234,212,0.12);color:#5EEAD4;
+  font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  padding:6px 12px;border-radius:999px;margin-bottom:18px;
+}
+.vs-spotlight-text h3{
+  font-family:'Poppins',sans-serif;font-weight:700;color:#fff;
+  font-size:24px;line-height:1.3;margin-bottom:14px;
+}
+.vs-spotlight-text p{color:#94A3B8;font-size:14.5px;line-height:1.7;margin-bottom:20px;}
+.vs-spotlight-list{display:flex;flex-direction:column;gap:12px;}
+.vs-spotlight-list div{display:flex;gap:10px;align-items:flex-start;color:#CBD5E1;font-size:13.5px;line-height:1.55;}
+.vs-spotlight-list svg{width:16px;height:16px;stroke:#5EEAD4;flex:none;margin-top:2px;}
+
+.vs-spotlight-fig{
+  background:linear-gradient(160deg,#134E4A 0%,#0F172A 70%);
+  padding:40px;display:flex;flex-direction:column;justify-content:center;gap:22px;
+}
+.vs-fig-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 18px;}
+.vs-fig-card .lbl{font-size:11px;color:#5EEAD4;text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-bottom:10px;}
+.vs-fig-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.vs-fig-row:last-child{margin-bottom:0;}
+.vs-fig-name{width:96px;font-size:11.5px;color:#CBD5E1;flex:none;}
+.vs-fig-track{flex:1;height:6px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;}
+.vs-fig-fill{height:100%;background:#2DD4BF;border-radius:4px;}
+.vs-fig-fill.low{background:#F87171;}
+.vs-fig-val{font-size:10.5px;color:#94A3B8;width:32px;text-align:right;flex:none;}
+.vs-fig-arrow{display:flex;align-items:center;justify-content:center;gap:10px;color:#5EEAD4;font-size:11px;font-weight:600;}
+.vs-fig-arrow svg{width:16px;height:16px;}
+
+/* ---- feature grid ---- */
+.vs-feat-grid{
+  max-width:1080px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.vs-feat-card{
+  background:#fff;border:1px solid #EEF2F6;border-radius:18px;
+  padding:28px 24px;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.vs-feat-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(15,23,42,0.07);border-color:#99F6E4;}
+.vs-feat-icon{
+  width:44px;height:44px;border-radius:12px;background:#CCFBF1;
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+}
+.vs-feat-icon svg{width:22px;height:22px;stroke:#0F766E;}
+.vs-feat-card h4{font-family:'Poppins',sans-serif;font-weight:700;font-size:16.5px;color:#0F172A;margin-bottom:8px;}
+.vs-feat-card p{color:#64748B;font-size:13.5px;line-height:1.65;}
+.vs-feat-pill{
+  display:inline-block;margin-top:12px;font-size:11px;font-weight:600;
+  padding:4px 10px;border-radius:999px;background:#FEF3C7;color:#92400E;
+}
+
+/* ---- stats strip ---- */
+.vs-stats{
+  max-width:1080px;margin:56px auto 0;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;
+}
+.vs-stats div{padding:26px 18px;text-align:center;border-right:1px solid #E2E8F0;}
+.vs-stats div:last-child{border-right:none;}
+.vs-stat-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:26px;color:#0F172A;}
+.vs-stat-num span{color:#0F9488;}
+.vs-stat-label{margin-top:6px;font-size:12.5px;color:#64748B;}
+
+@media(max-width:900px){
+  .vs-spotlight{grid-template-columns:1fr;}
+  .vs-feat-grid{grid-template-columns:1fr 1fr;}
+  .vs-stats{grid-template-columns:1fr 1fr;}
+  .vs-stats div{border-bottom:1px solid #E2E8F0;}
+}
+@media(max-width:560px){
+  .vs-feat-grid{grid-template-columns:1fr;}
+  .vs-stats{grid-template-columns:1fr 1fr;}
+  #features{padding:70px 6vw 80px;}
+}

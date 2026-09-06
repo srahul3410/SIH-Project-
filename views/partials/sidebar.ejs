@@ -1,0 +1,240 @@
+<!-- <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-logo">VS</div>
+
+            <div class="brand-text">
+                <h2>VidyaSetu</h2>
+                <span>Connecting × Learning</span>
+            </div>
+        </div>
+
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="#" class="nav-item active">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="/profile" class="nav-item">
+                    <i data-lucide="clipboard-check"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a href="/skillmatch" class="nav-item">
+                    <i data-lucide="map"></i>
+                    <span>Skill Analysis</span>
+                </a>
+
+                <a href="/learning" class="nav-item">
+                    <i data-lucide="book-open"></i>
+                    <span>Learnings</span>
+                </a>
+
+                <a href="/internship" class="nav-item">
+                    <i data-lucide="briefcase"></i>
+                    <span>Internships</span>
+                </a>
+
+                <a href="/placement" class="nav-item">
+                    <i data-lucide="building-2"></i>
+                    <span>Placements</span>
+                </a>
+
+                <a href="/portfolio" class="nav-item">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Portfolio</span>
+                </a>
+
+                <a href="/setting" class="nav-item">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Setting</span>
+                </a>
+
+                <a href="/help" class="nav-item">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Help & Support</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+               
+
+
+            <div class="nav-section">
+                <p class="nav-title">COLLABORATION</p>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="users"></i>
+                    <span>Mentorship</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="calendar-days"></i>
+                    <span>Workshops & Events</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="folder-open"></i>
+                    <span>Live Projects</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="lightbulb"></i>
+                    <span>Innovation Challenges</span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="sidebar-help">
+
+            <div class="help-icon">
+                <i data-lucide="headphones"></i>
+            </div>
+
+            <div>
+                <strong>Need Help?</strong>
+                <p>Our support team is here to help you 24/7</p>
+            </div>
+
+            <button>Contact Support</button>
+        </div>
+    </aside> -->
+
+    <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <div class="brand-logo">VS</div>
+
+        <div class="brand-text">
+            <h2>VidyaSetu</h2>
+            <span>Connecting × Learning</span>
+        </div>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <div class="nav-section">
+
+            <p class="nav-title">MAIN</p>
+
+            <a href="/dashboard"
+               class="nav-item <%= currentPath === '/dashboard' ? 'active' : '' %>">
+                <i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/profile"
+               class="nav-item <%= currentPath === '/profile' ? 'active' : '' %>">
+                <i data-lucide="clipboard-check"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="/skillmatch"
+               class="nav-item <%= currentPath === '/skillmatch' ? 'active' : '' %>">
+                <i data-lucide="map"></i>
+                <span>Skill Analysis</span>
+            </a>
+
+            <a href="/learning"
+               class="nav-item <%= currentPath === '/learning' ? 'active' : '' %>">
+                <i data-lucide="book-open"></i>
+                <span>Learnings</span>
+            </a>
+
+            <a href="/internship"
+               class="nav-item <%= currentPath === '/internship' ? 'active' : '' %>">
+                <i data-lucide="briefcase"></i>
+                <span>Internships</span>
+            </a>
+
+            <a href="/placement"
+               class="nav-item <%= currentPath === '/placement' ? 'active' : '' %>">
+                <i data-lucide="building-2"></i>
+                <span>Placements</span>
+            </a>
+
+            <a href="/portfolio"
+               class="nav-item <%= currentPath === '/portfolio' ? 'active' : '' %>">
+                <i data-lucide="folder-kanban"></i>
+                <span>Portfolio</span>
+            </a>
+
+            <a href="/setting"
+               class="nav-item <%= currentPath === '/setting' ? 'active' : '' %>">
+                <i data-lucide="settings"></i>
+                <span>Setting</span>
+            </a>
+
+            <a href="/help"
+               class="nav-item <%= currentPath === '/help' ? 'active' : '' %>">
+                <i data-lucide="headphones"></i>
+                <span>Help & Support</span>
+            </a>
+
+            <a href="/logout" class="nav-item">
+                <i data-lucide="log-out"></i>
+                <span>Log Out</span>
+            </a>
+
+        </div>
+
+
+        <div class="nav-section">
+
+            <p class="nav-title">COLLABORATION</p>
+
+            <a href="/mentorship"
+               class="nav-item <%= currentPath === '/mentorship' ? 'active' : '' %>">
+                <i data-lucide="users"></i>
+                <span>Mentorship</span>
+            </a>
+
+            <a href="/events"
+               class="nav-item <%= currentPath === '/events' ? 'active' : '' %>">
+                <i data-lucide="calendar-days"></i>
+                <span>Workshops & Events</span>
+            </a>
+
+            <a href="/projects"
+               class="nav-item <%= currentPath === '/projects' ? 'active' : '' %>">
+                <i data-lucide="folder-open"></i>
+                <span>Live Projects</span>
+            </a>
+
+            <a href="/challenges"
+               class="nav-item <%= currentPath === '/challenges' ? 'active' : '' %>">
+                <i data-lucide="lightbulb"></i>
+                <span>Innovation Challenges</span>
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <div class="sidebar-help">
+
+        <div class="help-icon">
+            <i data-lucide="headphones"></i>
+        </div>
+
+        <div>
+            <strong>Need Help?</strong>
+            <p>Our support team is here to help you 24/7</p>
+        </div>
+
+        <button onclick="window.location.href='/help'">
+            Contact Support
+        </button>
+
+    </div>
+
+</aside>

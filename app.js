@@ -27,10 +27,18 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: true }));      //now it will extract data from url
 app.use(express.static(path.join(__dirname, "public")));   //ab public ke file automatic Acess
+app.use((req, res, next) => {
+    res.locals.currentPath = req.path;
+    next();
+});
+
 
 app.get("/", (req, res) => {
     res.render("home.ejs")
 })
+app.get("/learn-More", (req, res)=>{
+    res.render("learnM");
+});
 
 app.get("/login", (req, res) => {
     res.render("login", {
@@ -44,11 +52,8 @@ app.get("/signup", (req, res) => {
 
 
 app.post("/signup", async (req, res) => {
-
     const { name, email, password } = req.body;
-
     console.log(req.body);
-
     const newUser = new User({
         name,
         email,
@@ -56,12 +61,9 @@ app.post("/signup", async (req, res) => {
     });
 
     await newUser.save();
-
     req.session.userId = newUser._id;
-
     res.redirect("/dashboard");
 });
-
 
 app.post("/login", async (req, res) => {
     const { email, password } = req.body;
@@ -70,20 +72,56 @@ app.post("/login", async (req, res) => {
     if (!user) {
         return res.redirect("/login?error=signup");
     }
-
     if (user.password !== password) {
         return res.redirect("/login?error=wrongpassword");
     }
-
     req.session.userId = user._id;
     res.redirect("/dashboard");
 });
 
 app.get("/dashboard", async (req, res) => {
+    if (!req.session.userId) {
+        return res.redirect("/login");
+    }
     const user = await User.findById(req.session.userId);
-
+    if (!user) {
+        req.session.destroy();
+        return res.redirect("/login");
+    }
     res.render("dashboard", { user });
 });
+app.get("/profile", (req, res)=>{
+    res.render("profile");
+});
+app.get("/edit", (req, res)=>{
+    res.render("edit");
+});
+app.get("/skillmatch", (req, res)=>{
+    res.render("skillmatch");
+});
+app.get("/learning", (req, res)=>{
+    res.render("learning");
+});
+app.get("/internship", (req, res)=>{
+    res.render("internship");
+});
+app.get("/placement", (req, res)=>{
+    res.render("placement");
+});
+app.get("/portfolio", (req, res)=>{
+    res.render("portfolio");
+});
+app.get("/setting", (req, res)=>{
+    res.render("setting");
+});
+app.get("/help", (req, res)=>{
+    res.render("help");
+});
+app.get("/test", (req, res)=>{
+    res.render("test");
+});
+
+
 
 app.listen(8080, (req, res) => {
     console.log("server is running !!")

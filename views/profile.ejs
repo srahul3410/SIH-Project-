@@ -4,112 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | AIC Portal</title>
 
-    <title>My Profile</title>
-
-    <link rel="stylesheet" href="/css/profile.css">
-
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
 </head>
 
 <body>
-
+<!-- Edit profile -->
 <div class="dashboard">
-
-    <!-- SIDEBAR -->
-
-    <aside class="sidebar">
-
+    <!-- ================= SIDEBAR ================= -->
+    <%- include("partials/sidebar") %>
+    <!-- <aside class="sidebar">
         <div class="logo">
-
             <div class="logo-icon">
                 <i class="fa-solid fa-graduation-cap"></i>
             </div>
-
-            <div>
-                <h3>AIC Portal</h3>
-                <small>Bridging Academia & Industry</small>
+            <div class="logo-text">
+                <h3>VidyaSetu</h3>
+                <small>Academia • Industry</small>
             </div>
-
         </div>
-
-
-        <a href="../../overview/index.html" class="menu">
+        <a href="/dashboard" class="menu">
             <i class="fa-solid fa-house"></i>
-            Dashboard
+            <span>Dashboard</span>
         </a>
-
-
         <div class="title">MAIN</div>
-
-
-        <a href="#" class="menu active">
+        <a href="/profile" class="menu active">
             <i class="fa-regular fa-user"></i>
-            My Profile
+            <span>My Profile</span>
         </a>
-
-        <a href="../../skill-assessment/index.html" class="menu">
+        <a href="/skill-assessment" class="menu">
             <i class="fa-solid fa-clipboard-check"></i>
-            Skill Assessment
+            <span>Skill Assessment</span>
         </a>
-
-        <a href="../../skill-mapping/index.html" class="menu">
+        <a href="/skill-mapping" class="menu">
             <i class="fa-solid fa-diagram-project"></i>
-            Skill Mapping
+            <span>Skill Mapping</span>
         </a>
-
-        <a href="../../opportunities/index.html" class="menu">
+        <a href="/opportunities" class="menu">
             <i class="fa-solid fa-briefcase"></i>
-            Opportunities
+            <span>Opportunities</span>
         </a>
-
-        <a href="../../applications/index.html" class="menu">
+        <a href="/applications" class="menu">
             <i class="fa-regular fa-file-lines"></i>
-            Applications
+            <span>Applications</span>
         </a>
-
-        <a href="../../messages/index.html" class="menu">
+        <a href="/messages" class="menu">
             <i class="fa-regular fa-message"></i>
-            Messages
+            <span>Messages</span>
         </a>
-
-        <a href="../../learning/index.html" class="menu">
+        <a href="/learning" class="menu">
             <i class="fa-solid fa-book-open"></i>
-            Learning
+            <span>Learning</span>
         </a>
-
-
         <div class="title">SETTINGS</div>
-
-        <a href="../../settings/index.html" class="menu">
+        <a href="/settings" class="menu">
             <i class="fa-solid fa-gear"></i>
-            Settings
+            <span>Settings</span>
         </a>
-
-        <a href="#" class="menu">
+        <a href="/help" class="menu">
             <i class="fa-regular fa-circle-question"></i>
-            Help & Support
+            <span>Help & Support</span>
         </a>
-
-        <a href="#" class="menu logout">
+        <a href="/logout" class="menu logout">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            Logout
+            <span>Logout</span>
         </a>
-
-    </aside>
-
-
-    <!-- MAIN -->
-
+    </aside> -->
+    <!-- ================= MAIN ================= -->
     <main class="main">
-
-        <!-- TOPBAR -->
-
+        <!-- ================= TOPBAR ================= -->
         <header class="topbar">
-
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input
@@ -117,206 +96,364 @@
                     placeholder="Search opportunities, skills..."
                 >
             </div>
-
-
             <div class="top-user">
-
-                <i class="fa-regular fa-bell"></i>
-
-                <div class="avatar">
+                <button class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <span></span>
+                </button>
+                <div class="small-avatar">
                     S
                 </div>
-
-                <div>
+                <div class="user-mini">
                     <strong>Saniya Siddique</strong>
                     <small>Student</small>
                 </div>
-
             </div>
-
         </header>
 
-
-        <!-- CONTENT -->
-
+        <!-- ================= CONTENT ================= -->
         <section class="content">
-
+            <!-- PAGE HEADING -->
             <div class="page-heading">
-
                 <div>
                     <h1>My Profile</h1>
-                    <p>Your professional identity and career profile</p>
+                    <p>
+                        Your professional identity and career profile
+                    </p>
                 </div>
-
-                <button id="editProfile">
+                <button class="edit-profile" id="editProfile" onclick="window.location.href='/edit'">
                     <i class="fa-solid fa-pen"></i>
                     Edit Profile
                 </button>
-
             </div>
 
-
-            <!-- PROFILE CARD -->
-
+            <!-- ================= PROFILE CARD ================= -->
             <div class="profile-card">
-
                 <div class="profile-top">
-
+                    <!-- AVATAR -->
                     <div class="profile-image">
                         S
                     </div>
-
-
+                    <!-- DETAILS -->
                     <div class="profile-details">
-
                         <h2>Saniya Siddique</h2>
-
-                        <p>B.Tech CSE • 2nd Year</p>
-
-                        <p>
+                        <p class="course">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            B.Tech CSE • 2nd Year
+                        </p>
+                        <p class="location">
                             <i class="fa-solid fa-location-dot"></i>
                             Lucknow, Uttar Pradesh
                         </p>
-
                         <span class="status">
+                            <i class="fa-solid fa-circle"></i>
                             Aspiring Software Developer
                         </span>
-
                     </div>
 
+                    <!-- PROFILE COMPLETION -->
+                    <div class="profile-completion">
+                        <div class="completion-circle">
+                            <span>72%</span>
+                        </div>
+                        <small>Profile Complete</small>
+                    </div>
                 </div>
 
-
-                <!-- CONNECT -->
-
+                <!-- SOCIAL LINKS -->
                 <div class="connect">
-
                     <h3>Connect with me</h3>
-
                     <div class="socials">
-
-                        <a href="#">
+                        <a href="https://www.linkedin.com/" class="social-link">
                             <i class="fa-brands fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
-
-                        <a href="#">
+                        <a href="https://github.com/" class="social-link">
                             <i class="fa-brands fa-github"></i>
                             <span>GitHub</span>
-                        </a>
 
-                        <a href="#">
+                        </a>
+                        <a href="https://leetcode.com/" class="social-link">
                             <i class="fa-solid fa-code"></i>
                             <span>LeetCode</span>
                         </a>
-
-                        <a href="#">
+                        <a href="https://www.codechef.com/practice#programming-languages" class="social-link">
                             <i class="fa-solid fa-laptop-code"></i>
                             <span>CodeChef</span>
                         </a>
-
-                        <a href="#">
-                            <i class="fa-regular fa-envelope"></i>
+                        <a href="/portfolio" class="social-link">
+                            <i class="fa-solid fa-globe"></i>
                             <span>Portfolio</span>
                         </a>
+                    </div>
+                </div>
+            </div>
 
-                        <a href="#">
-                            <i class="fa-solid fa-ellipsis"></i>
-                            <span>More</span>
-                        </a>
+            <!-- ================= ABOUT ================= -->
+            <div class="card about-card">
+                <div class="section-heading">
+                    <div class="heading-left">
+                        <div class="heading-icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div>
+                            <h2>About Me</h2>
+                            <p>Professional introduction</p>
+                        </div>
+                    </div>
+                    <button class="small-edit">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                </div>
+                <p class="about-text">
+                    Passionate Computer Science student interested in
+                    software development, full-stack development and
+                    emerging technologies. I enjoy solving real-world
+                    problems through code and continuously improving my
+                    technical and problem-solving skills.
+                </p>
+            </div>
 
+            <!-- ================= STATS ================= -->
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div>
+                        <strong>12+</strong>
+                        <span>Skills</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <div>
+                        <strong>4</strong>
+                        <span>Projects</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <strong>6</strong>
+                        <span>Certificates</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <strong>3</strong>
+                        <span>Achievements</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= PROFILE SECTIONS ================= -->
+            <div class="section-grid">
+                <!-- EDUCATION -->
+                <div class="card">
+                    <div class="section-heading">
+                        <div class="heading-left">
+                            <div class="heading-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h2>Education</h2>
+                                <p>Academic background</p>
+                            </div>
+                        </div>
+                        <button class="add-btn">
+                            + Add
+                        </button>
                     </div>
 
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div>
+                            <h3>B.Tech in Computer Science</h3>
+                            <p>
+                                Sri Ram Swaroop Memorial University
+                            </p>
+                            <span>
+                                2025 – 2029
+                            </span>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- SKILLS -->
+                <div class="card">
+                    <div class="section-heading">
+                        <div class="heading-left">
+                            <div class="heading-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div>
+                                <h2>My Skills</h2>
+                                <p>Technical expertise</p>
+                            </div>
+                        </div>
+                        <button class="add-btn" id="addSkill">
+                            + Add
+                        </button>
+                    </div>
+                    <div class="skills">
+                        <span>C</span>
+                        <span>C++</span>
+                        <span>Python</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>MongoDB</span>
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>DSA</span>
+                    </div>
+                </div>
+                <!-- PROJECTS -->
+                <div class="card">
+                    <div class="section-heading">
+                        <div class="heading-left">
+                            <div class="heading-icon">
+                                <i class="fa-solid fa-folder-open"></i>
+                            </div>
+                            <div>
+                                <h2>Projects</h2>
+                                <p>Featured work</p>
+                            </div>
+                        </div>
+                        <button class="add-btn">
+                            + Add
+                        </button>
+                    </div>
+                    <div class="project-item">
+                        <div>
+                            <h3>VidyaSetu</h3>
+                            <p>
+                                Academia–Industry ecosystem connecting
+                                students with skills, learning and
+                                career opportunities.
+                            </p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Node.js</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </div>
+                <!-- CERTIFICATIONS -->
+                <div class="card">
+                    <div class="section-heading">
+                        <div class="heading-left">
+                            <div class="heading-icon">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h2>Certifications</h2>
+                                <p>Courses & credentials</p>
+                            </div>
+                        </div>
+                        <button class="add-btn">
+                            + Add
+                        </button>
+                    </div>
+                    <div class="empty-section">
+                        <i class="fa-solid fa-certificate"></i>
+                        <p>
+                            Add your certifications and
+                            professional credentials.
+                        </p>
+                    </div>
+                </div>
+                <!-- ACHIEVEMENTS -->
+                <div class="card">
+                    <div class="section-heading">
+                        <div class="heading-left">
+                            <div class="heading-icon">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <h2>Achievements</h2>
+                                <p>Milestones & recognition</p>
+                            </div>
+                        </div>
+                        <button class="add-btn">
+                            + Add
+                        </button>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-award"></i>
+                        <div>
+                            <h3>Smart India Hackathon</h3>
+                            <p>
+                                Participated in a national-level
+                                innovation challenge.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-medal"></i>
+                        <div>
+                            <h3>Codex Competition</h3>
+                            <p>
+                                Participated in competitive programming.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- RESUME -->
+                <div class="card">
+                    <div class="section-heading">
+                        <div class="heading-left">
+                            <div class="heading-icon">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div>
+                                <h2>Resume</h2>
+                                <p>Your professional resume</p>
+                            </div>
+                        </div>
+                        <button class="add-btn">
+                            + Upload
+                        </button>
+                    </div>
+                    <div class="resume-box">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <div>
+                            <h3>No resume uploaded</h3>
+                            <p>
+                                Upload your latest resume
+                                for recruiters.
+                            </p>
+                        </div>
+                        <button class="upload-btn">
+                            Upload Resume
+                        </button>
+                    </div>
+                </div>
             </div>
-
-
-            <!-- ABOUT -->
-
-            <div class="card">
-
-                <h2>About Me</h2>
-
-                <p class="about-text">
-                    Passionate about solving real-world problems through
-                    code. I enjoy working on full-stack development and
-                    exploring new technologies.
-                </p>
-
-            </div>
-
-
-            <!-- TABS -->
-
-            <div class="tabs">
-
-                <button class="tab active">Overview</button>
-                <button class="tab">Education</button>
-                <button class="tab">Projects</button>
-                <button class="tab">Certifications</button>
-                <button class="tab">Achievements</button>
-                <button class="tab">Resume</button>
-
-            </div>
-
-
-            <!-- STATS -->
-
-            <div class="stats">
-
-                <div class="stat-card">
-
-                    <i class="fa-solid fa-code"></i>
-
-                    <strong>12+</strong>
-
-                    <span>Skills</span>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <i class="fa-solid fa-folder-open"></i>
-
-                    <strong>4</strong>
-
-                    <span>Projects</span>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <i class="fa-solid fa-certificate"></i>
-
-                    <strong>6</strong>
-
-                    <span>Certificates</span>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <i class="fa-solid fa-trophy"></i>
-
-                    <strong>3</strong>
-
-                    <span>Achievements</span>
-
-                </div>
-
-            </div>
-
         </section>
-
     </main>
-
 </div>
 
-<script src="profile.js"></script>
 
+<!-- JavaScript -->
+<script src="/js/profile.js"></script>
 </body>
+
 </html>
+

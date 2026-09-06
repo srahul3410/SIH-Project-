@@ -1,447 +1,1168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+
+    <title>VidyaSetu | Dashboard</title>
+
     <link rel="stylesheet" href="/css/dashboard.css">
-    <!-- Font Awesome -->
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
+Abhay
 <body>
-<div class="dashboard">
+
+<div class="dashboard-layout">
+
     <!-- ================= SIDEBAR ================= -->
-    <aside class="sidebar">
-      <!-- Logo -->
-        <div class="logo">
-            <div class="logo-icon">
-                <i class="fa-solid fa-graduation-cap"></i>
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">VS</div>
+
+            <div class="brand-text">
+                <h2>VidyaSetu</h2>
+                <span>Connecting × Learning</span>
             </div>
-            <div class="logo-text">
-                <h3>AIC Portal</h3>
-                <span>Bridging Academia & Industry</span>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section">
+
+                <p class="nav-title">MAIN</p>
+
+                <a href="/dashboard" class="nav-item active">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="/profile" class="nav-item">
+                    <i data-lucide="clipboard-check"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a href="/skillmatch" class="nav-item">
+                    <i data-lucide="map"></i>
+                    <span>Skill Analysis</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="book-open"></i>
+                    <span>Learnings</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="briefcase"></i>
+                    <span>Internships</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="building-2"></i>
+                    <span>Placements</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Portfolio</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Setting</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Help & Support</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="folder-kanban"></i>
+                    <span>Log Out</span>
+                </a>
+
             </div>
+               
+
+
+            <div class="nav-section">
+
+                <p class="nav-title">COLLABORATION</p>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="users"></i>
+                    <span>Mentorship</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="calendar-days"></i>
+                    <span>Workshops & Events</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="folder-open"></i>
+                    <span>Live Projects</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <i data-lucide="lightbulb"></i>
+                    <span>Innovation Challenges</span>
+                </a>
+
+            </div>
+
+
+        </nav>
+
+
+        <div class="sidebar-help">
+
+            <div class="help-icon">
+                <i data-lucide="headphones"></i>
+            </div>
+
+            <div>
+                <strong>Need Help?</strong>
+                <p>Our support team is here to help you 24/7</p>
+            </div>
+
+            <button>Contact Support</button>
+
         </div>
 
-        <!-- Dashboard -->
-        <a href="#" class="menu active">
-            <i class="fa-solid fa-house"></i>
-            <span>Dashboard</span>
-        </a>
-
-        <!-- Main -->
-        <div class="menu-title">
-            MAIN
-        </div>
-
-        <a href="../profile/profile.html" class="menu">
-            <i class="fa-regular fa-user"></i>
-            <span>My Profile</span>
-        </a>
-
-        <a href="../skill-ass/skill.html" class="menu">
-            <i class="fa-solid fa-clipboard-check"></i>
-            <span>Skill Assessment</span>
-        </a>
-
-        <a href="../skill-map/skillm.html" class="menu">
-            <i class="fa-solid fa-diagram-project"></i>
-            <span>Skill Mapping</span>
-        </a>
-
-        <a href="../opportunity/opp.html" class="menu">
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Opportunities</span>
-        </a>
-
-        <a href="../applications/index.html" class="menu">
-            <i class="fa-regular fa-file-lines"></i>
-            <span>Applications</span>
-        </a>
-
-        <a href="../messages/index.html" class="menu">
-            <i class="fa-regular fa-message"></i>
-            <span>Messages</span>
-        </a>
-
-        <a href="../learning/index.html" class="menu">
-            <i class="fa-solid fa-book-open"></i>
-            <span>Learning</span>
-        </a>
-
-        <!-- Settings -->
-        <div class="menu-title settings-title">
-            SETTINGS
-        </div>
-
-        <a href="../settings/index.html" class="menu">
-            <i class="fa-solid fa-gear"></i>
-            <span>Settings</span>
-        </a>
-
-        <a href="#" class="menu">
-            <i class="fa-regular fa-circle-question"></i>
-            <span>Help & Support</span>
-        </a>
-
-        <a href="#" class="menu logout">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <span>Logout</span>
-        </a>
     </aside>
 
+
     <!-- ================= MAIN ================= -->
+
     <main class="main-content">
-        <!-- ================= TOPBAR ================= -->
+
+        <!-- TOP NAVBAR -->
+
         <header class="topbar">
-            <!-- Search -->
+
+            <button class="menu-button" id="menuButton">
+                <i data-lucide="menu"></i>
+            </button>
+
+
             <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <i data-lucide="search"></i>
+
                 <input
                     type="text"
-                    id="searchInput"
-                    placeholder="Search opportunities, skills..."
+                    placeholder="Search opportunities, skills, programs, people..."
                 >
+
             </div>
 
-            <!-- Right -->
-            <div class="top-right">
 
-                <!-- Notification -->
-                <button
-                    class="notification"
-                    id="notificationBtn"
-                >
-                    <i class="fa-regular fa-bell"></i>
-                    <span>1</span>
+            <div class="topbar-right">
+
+                <button class="icon-button notification">
+                    <i data-lucide="bell"></i>
+                    <span>3</span>
                 </button>
 
-                <!-- User -->
-                <div class="user-info">
-                    <div class="user-avatar">
-                        S
+                <button class="icon-button">
+                    <i data-lucide="mail"></i>
+                </button>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        AK
                     </div>
-                    <div>
-                        <strong>Welcome, <%=user.name %> </strong>
-                        <small>Student</small>
+
+                    <div class="profile-info">
+                        <strong> <%=user.name%> </strong>
+                        <span>Student</span>
                     </div>
+
+                    <i data-lucide="chevron-down"></i>
+
                 </div>
+
             </div>
+
         </header>
 
-        <!-- ================= PAGE CONTENT ================= -->
-        <section class="content">
 
-            <!-- Greeting -->
-            <div class="greeting">
-                <div>
+        <!-- ================= DASHBOARD ================= -->
+
+        <div class="dashboard-container">
+
+
+            <!-- WELCOME CARD -->
+
+            <section class="welcome-card">
+
+                <div class="welcome-content">
+
+                    <span class="eyebrow">
+                        STUDENT DASHBOARD
+                    </span>
+
                     <h1>
-                        Welcome, <%=user.name %>&hearts;
+                        Good morning, <%=user.name%>! 👋
                     </h1>
+
                     <p>
-                        Ready to explore new opportunities today?
+                        Let's bridge the gap between education and industry.
                     </p>
-                </div>
-            </div>
 
 
-            <!-- ================= TOP CARDS ================= -->
-            <div class="top-cards">
+                    <div class="readiness">
 
-                <!-- Profile Completion -->
-                <div class="card profile-card">
-                    <div class="card-header">
-                        <span>
-                            Profile Completion
-                        </span>
-                        <i class="fa-regular fa-user"></i>
-                    </div>
+                        <div class="progress-circle">
 
-                    <div class="percentage">
-                        <strong>82%</strong>
-                        <span>Complete</span>
-                    </div>
+                            <svg viewBox="0 0 100 100">
 
-                    <div class="progress">
-                        <div
-                            class="progress-fill"
-                            style="width:82%"
-                        ></div>
-                    </div>
+                                <circle
+                                    class="circle-bg"
+                                    cx="50"
+                                    cy="50"
+                                    r="42"
+                                ></circle>
 
-                    <a href="../profile/edit/index.html">
-                        Complete Profile →
-                    </a>
-                </div>
+                                <circle
+                                    class="circle-progress"
+                                    cx="50"
+                                    cy="50"
+                                    r="42"
+                                ></circle>
 
-                <!-- Skill Strength -->
-                <div class="card skill-card">
-                    <div class="card-header">
-                        <span>
-                            Skill Strength
-                        </span>
-                        <i class="fa-solid fa-chart-simple"></i>
-                    </div>
+                            </svg>
 
-                    <div class="circle">
-                        <div class="circle-inner">
                             <strong>78%</strong>
-                            <span>Overall Score</span>
+
                         </div>
+
+
+                        <div class="readiness-text">
+
+                            <strong>Your Skill Readiness</strong>
+
+                            <span class="status">
+                                Advanced
+                            </span>
+
+                            <p>
+                                Keep learning! You're ahead of 68% students.
+                            </p>
+
+                        </div>
+
                     </div>
+
                 </div>
 
-                <!-- Top Skills -->
-                <div class="card top-skills-card">
-                    <div class="card-header">
-                        <span>
-                            Top Skills
-                        </span>
-                        <a href="../skill-mapping/index.html">
-                            View All
-                        </a>
+
+                <!-- QUICK STATS -->
+
+                <div class="welcome-stats">
+
+                    <div class="quick-stat">
+
+                        <div class="stat-icon teal">
+                            <i data-lucide="award"></i>
+                        </div>
+
+                        <span>Skills</span>
+                        <strong>24</strong>
+
                     </div>
 
-                    <div class="skill-item">
-                        <div>
-                            <span class="dot green"></span>
-                            Problem Solving
+
+                    <div class="quick-stat">
+
+                        <div class="stat-icon green">
+                            <i data-lucide="badge-check"></i>
                         </div>
-                        <strong>85%</strong>
-                    </div>
-                    <div class="skill-item">
-                        <div>
-                            <span class="dot blue"></span>
-                            Web Development
-                        </div>
-                        <strong>80%</strong>
+
+                        <span>Certifications</span>
+                        <strong>7</strong>
+
                     </div>
 
-                    <div class="skill-item">
-                        <div>
-                            <span class="dot purple"></span>
-                            Data Structures
+
+                    <div class="quick-stat">
+
+                        <div class="stat-icon orange">
+                            <i data-lucide="rocket"></i>
                         </div>
-                        <strong>75%</strong>
+
+                        <span>Internships</span>
+                        <strong>2</strong>
+
                     </div>
+
+
+                    <div class="quick-stat">
+
+                        <div class="stat-icon blue">
+                            <i data-lucide="layers"></i>
+                        </div>
+
+                        <span>Projects</span>
+                        <strong>5</strong>
+
+                    </div>
+
                 </div>
-            </div>
 
-            <!-- ================= MIDDLE SECTION ================= -->
-            <div class="middle-grid">
 
-                <!-- Recommended -->
-                <div class="card recommended-card">
-                    <div class="section-header">
+                <div class="welcome-decoration">
+
+                    <div class="decoration-circle">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- CONTENT GRID -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- LEFT COLUMN -->
+
+                <div class="left-column">
+
+
+                    <!-- SKILL PROFILE -->
+
+                    <section class="card skill-profile">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Your Skill Profile</h2>
+                                <p>
+                                    Understand your strengths and improvement areas.
+                                </p>
+                            </div>
+
+                            <a href="#">
+                                View Full Report →
+                            </a>
+
+                        </div>
+
+
+                        <div class="skill-content">
+
+
+                            <!-- RADAR -->
+
+                            <div class="radar-container">
+
+                                <svg
+                                    viewBox="0 0 420 350"
+                                    class="radar-chart"
+                                >
+
+                                    <!-- Outer polygon -->
+                                    <polygon
+                                        points="210,35 350,135 295,290 125,290 70,135"
+                                        class="radar-grid"
+                                    />
+
+                                    <!-- Middle polygon -->
+                                    <polygon
+                                        points="210,75 310,148 270,255 150,255 110,148"
+                                        class="radar-grid"
+                                    />
+
+                                    <!-- Inner polygon -->
+                                    <polygon
+                                        points="210,110 275,158 250,220 170,220 145,158"
+                                        class="radar-grid"
+                                    />
+
+                                    <!-- Skill polygon -->
+                                    <polygon
+                                        points="210,70 295,135 275,255 125,255 105,135"
+                                        class="radar-fill"
+                                    />
+
+                                    <polyline
+                                        points="210,70 295,135 275,255 125,255 105,135 210,70"
+                                        class="radar-line"
+                                    />
+
+                                    <circle cx="210" cy="70" r="5"/>
+                                    <circle cx="295" cy="135" r="5"/>
+                                    <circle cx="275" cy="255" r="5"/>
+                                    <circle cx="125" cy="255" r="5"/>
+                                    <circle cx="105" cy="135" r="5"/>
+
+                                    <text x="210" y="22">
+                                        Problem Solving
+                                    </text>
+
+                                    <text x="305" y="130">
+                                        Communication
+                                    </text>
+
+                                    <text x="280" y="280">
+                                        Teamwork
+                                    </text>
+
+                                    <text x="210" y="310">
+                                        Leadership
+                                    </text>
+
+                                    <text x="42" y="280">
+                                        Domain Knowledge
+                                    </text>
+
+                                    <text x="15" y="130">
+                                        Technical Skills
+                                    </text>
+
+                                </svg>
+
+                            </div>
+
+
+                            <!-- STRENGTHS -->
+
+                            <div class="strength-box">
+
+                                <h3>Top Strengths</h3>
+
+                                <div class="tags success-tags">
+
+                                    <span>C++</span>
+                                    <span>Data Structures</span>
+                                    <span>Problem Solving</span>
+                                    <span>SQL</span>
+
+                                </div>
+
+
+                                <h3>Areas to Improve</h3>
+
+                                <div class="tags improve-tags">
+
+                                    <span>System Design</span>
+                                    <span>Cloud</span>
+                                    <span>Presentation Skills</span>
+
+                                </div>
+
+
+                                <h3>Industry Comparison</h3>
+
+
+                                <div class="comparison">
+
+                                    <div class="comparison-label">
+                                        <span>You</span>
+                                        <strong>78%</strong>
+                                    </div>
+
+                                    <div class="bar">
+                                        <div style="width:78%"></div>
+                                    </div>
+
+
+                                    <div class="comparison-label">
+                                        <span>Industry Average</span>
+                                        <strong>62%</strong>
+                                    </div>
+
+                                    <div class="bar average">
+                                        <div style="width:62%"></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- LEARNING RECOMMENDATIONS -->
+
+                    <section class="card recommended-learning">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Recommended For You</h2>
+                                <p>
+                                    Personalized learning based on your skill profile.
+                                </p>
+                            </div>
+
+                            <a href="#">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="learning-list">
+
+
+                            <div class="learning-item">
+
+                                <div class="learning-icon teal-bg">
+                                    <i data-lucide="code-2"></i>
+                                </div>
+
+                                <div class="learning-info">
+
+                                    <h3>
+                                        Data Structures & Algorithms using C++
+                                    </h3>
+
+                                    <span>
+                                        Intermediate • 6 Weeks
+                                    </span>
+
+                                </div>
+
+                                <strong class="match">
+                                    98% match
+                                </strong>
+
+                            </div>
+
+
+                            <div class="learning-item">
+
+                                <div class="learning-icon aqua-bg">
+                                    <i data-lucide="boxes"></i>
+                                </div>
+
+                                <div class="learning-info">
+
+                                    <h3>
+                                        System Design Fundamentals
+                                    </h3>
+
+                                    <span>
+                                        Beginner • 4 Weeks
+                                    </span>
+
+                                </div>
+
+                                <strong class="match">
+                                    92% match
+                                </strong>
+
+                            </div>
+
+
+                            <div class="learning-item">
+
+                                <div class="learning-icon yellow-bg">
+                                    <i data-lucide="megaphone"></i>
+                                </div>
+
+                                <div class="learning-info">
+
+                                    <h3>
+                                        Communication for Professionals
+                                    </h3>
+
+                                    <span>
+                                        Beginner • 3 Weeks
+                                    </span>
+
+                                </div>
+
+                                <strong class="match">
+                                    88% match
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="outline-button">
+                            Explore All Learning Programs
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+
+                    </section>
+
+
+
+                    <!-- ANALYTICS -->
+
+                    <section class="analytics-grid">
+
+
+                        <div class="analytics-card">
+
+                            <div class="analytics-icon">
+                                <i data-lucide="clock-3"></i>
+                            </div>
+
+                            <div>
+                                <span>Learning Hours</span>
+                                <strong>124</strong>
+                                <small>+18% this month</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="analytics-card">
+
+                            <div class="analytics-icon">
+                                <i data-lucide="eye"></i>
+                            </div>
+
+                            <div>
+                                <span>Profile Views</span>
+                                <strong>342</strong>
+                                <small>+25% this month</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="analytics-card">
+
+                            <div class="analytics-icon">
+                                <i data-lucide="send"></i>
+                            </div>
+
+                            <div>
+                                <span>Applications</span>
+                                <strong>12</strong>
+                                <small>+33% this month</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="analytics-card">
+
+                            <div class="analytics-icon">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+
+                            <div>
+                                <span>Profile Strength</span>
+                                <strong>85%</strong>
+                                <small>+10% this month</small>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- BANNER -->
+
+                    <section class="career-banner">
+
                         <div>
+
+                            <span>BUILD. LEARN. COLLABORATE. SUCCEED.</span>
+
                             <h2>
-                                Recommended for You
+                                Connect with industry experts,
+                                work on real-world projects
                             </h2>
+
                             <p>
-                                Based on your skills and interests
+                                Accelerate your career with meaningful
+                                industry connections.
                             </p>
-                        </div>
-                        <a href="../opportunities/index.html">
-                            View All
-                        </a>
-                    </div>
 
-                    <!-- Google -->
-                    <div class="job">
-                        <div class="company-logo google">
-                            G
-                        </div>
-                        <div class="job-info">
-                            <h3>
-                                Backend Developer Intern
-                            </h3>
-                            <p>
-                                Google
-                            </p>
-                            <div class="job-meta">
-                                <span>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    Bangalore
-                                </span>
-                                <span>
-                                    <i class="fa-regular fa-clock"></i>
-                                    6 months
-                                </span>
-                                <span>
-                                    ₹25,000 / month
-                                </span>
-                            </div>
+                            <button>
+                                Explore Live Projects
+                                <i data-lucide="arrow-right"></i>
+                            </button>
+
                         </div>
 
-                        <button class="apply-btn">
-                            Apply Now
-                        </button>
-                    </div>
 
-                    <!-- Microsoft -->
-                    <div class="job">
-                        <div class="company-logo microsoft">
-                            <i class="fa-brands fa-microsoft"></i>
-                        </div>
+                  <!-- ================= INDUSTRY LOGOS ================= -->
 
-                        <div class="job-info">
-                            <h3>
-                                SDE Intern
-                            </h3>
-                            <p>
-                                Microsoft
-                            </p>
-                            <div class="job-meta">
-                                <span>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    Hyderabad
-                                </span>
-                                <span>
-                                    <i class="fa-regular fa-clock"></i>
-                                    6 months
-                                </span>
-                                <span>
-                                    ₹30,000 / month
-                                </span>
-                            </div>
-                        </div>
+<div class="company-logos">
 
-                        <button class="apply-btn">
-                            Apply Now
-                        </button>
-                    </div>
-                </div>
+    <!-- Google -->
+    <div class="industry-company">
+        <div class="industry-logo google-logo">
+            <span>G</span>
+        </div>
+    </div>
 
-                <!-- Upcoming Deadlines -->
-                <div class="card deadline-card">
-                    <div class="section-header">
-                        <h2>
-                            Upcoming Deadlines
-                        </h2>
-                        <a href="../opportunities/index.html">
-                            View All
-                        </a>
-                    </div>
+    <!-- Microsoft -->
+    <div class="industry-company">
+        <div class="industry-logo microsoft-logo">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
 
-                    <!-- Deadline 1 -->
-                    <div class="deadline">
-                        <div class="deadline-icon purple">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
+    <!-- TCS -->
+    <div class="industry-company">
+        <div class="industry-logo tcs-logo">
+            tcs
+        </div>
+    </div>
 
-                        <div class="deadline-info">
-                            <strong>
-                                TCS Digital Hiring
-                            </strong>
-                            <small>
-                                Application Deadline
-                            </small>
-                        </div>
+    <!-- Deloitte -->
+    <div class="industry-company">
+        <div class="industry-logo deloitte-logo">
+            D.
+        </div>
+    </div>
 
-                        <span>
-                            20 May 2025
-                        </span>
-                    </div>
+    <!-- Infosys -->
+    <div class="industry-company">
+        <div class="industry-logo infosys-logo">
+            Infosys
+        </div>
+    </div>
 
-                    <!-- Deadline 2 -->
-                    <div class="deadline">
-                        <div class="deadline-icon green">
-                            <i class="fa-solid fa-file-lines"></i>
-                        </div>
+    <!-- Accenture -->
+    <div class="industry-company">
+        <div class="industry-logo accenture-logo">
+            &gt;
+        </div>
+    </div>
 
-                        <div class="deadline-info">
-                            <strong>
-                                Internship Application
-                            </strong>
-                            <small>
-                                Application Deadline
-                            </small>
-                        </div>
-                        <span>
-                            25 May 2025
-                        </span>
-                    </div>
-
-                    <!-- Deadline 3 -->
-                    <div class="deadline">
-                        <div class="deadline-icon orange">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <div class="deadline-info">
-                            <strong>
-                                Google Summer of Code
-                            </strong>
-                            <small>
-                                Registration Deadline
-                            </small>
-                        </div>
-                        <span>
-                            30 May 2025
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ================= BOTTOM ================= -->
-            <div class="bottom-grid">
-                <!-- Recent Activity -->
-                <div class="card activity-card">
-                    <div class="section-header">
-                        <h2>
-                            Recent Activity
-                        </h2>
-                    </div>
-                    <div class="activity">
-                        <i class="fa-regular fa-circle-check"></i>
-                        <div>
-                            <p>
-                                You applied for Backend Developer
-                                Intern at Google
-                            </p>
-                            <small>
-                                2 days ago
-                            </small>
-                        </div>
-                    </div>
-
-                    <div class="activity">
-                        <i class="fa-solid fa-clipboard-check"></i>
-                        <div>
-                            <p>
-                                Skill Assessment completed
-                            </p>
-                            <small>
-                                5 days ago
-                            </small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quote -->
-                <div class="quote-card">
-                    <div>
-                        <h2>
-                            The future depends on
-                            what you do today.
-                        </h2>
-                        <p>
-                            — Mahatma Gandhi
-                        </p>
-                    </div>
-                    <div class="quote-icon">
-                        <i class="fa-solid fa-user-graduate"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 </div>
 
-<script src="front.js"></script>
+                    </section>
+
+
+
+<!-- ================= TRUSTED ================= -->
+
+<section class="trusted card">
+
+    <p>Trusted by Leading Institutions & Industries</p>
+
+    <div class="trusted-logos">
+
+    <div class="trusted-item">
+        <i data-lucide="landmark"></i>
+        <span>University</span>
+    </div>
+
+    <div class="trusted-item">
+        <i data-lucide="graduation-cap"></i>
+        <span>Institute</span>
+    </div>
+
+    <div class="trusted-item">
+        <div class="trusted-microsoft">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span>Microsoft</span>
+    </div>
+
+    <div class="trusted-item">
+        <div class="trusted-tcs">tcs</div>
+        <span>TCS</span>
+    </div>
+
+    <div class="trusted-item">
+        <div class="trusted-infosys">Infosys</div>
+        <span>Infosys</span>
+    </div>
+
+    <div class="trusted-item">
+        <div class="trusted-deloitte">Deloitte.</div>
+        <span>Deloitte</span>
+    </div>
+
+    <div class="trusted-item">
+        <div class="trusted-google">G</div>
+        <span>Google</span>
+    </div>
+
+</div>
+
+</section>
+
+                </div>
+
+
+
+                <!-- RIGHT COLUMN -->
+
+                <aside class="right-column">
+
+
+                    <!-- OPPORTUNITIES -->
+
+                    <section class="card opportunities-card">
+
+                        <div class="card-header">
+
+                            <h2>Recommended Opportunities</h2>
+
+                            <a href="#">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="opportunity-list">
+
+
+                            <div class="opportunity">
+
+                                <div class="opportunity-company-logo microsoft-opportunity">
+                                     <span class="ms-grid">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                        </span>
+                                </div>
+
+                                <div class="opportunity-info">
+
+                                    <div class="opportunity-title">
+
+                                        <div>
+                                            <h3>
+                                                Software Engineering Intern
+                                            </h3>
+
+                                            <span>
+                                                Microsoft • Bangalore, India
+                                            </span>
+                                        </div>
+
+                                        <i data-lucide="bookmark"></i>
+
+                                    </div>
+
+
+                                    <div class="chips">
+
+                                        <span>Internship</span>
+                                        <span>Remote</span>
+
+                                    </div>
+
+                                    <p>
+                                        Skills: C++, DSA, OOP, Problem Solving
+                                    </p>
+
+                                    <div class="match-row">
+
+                                        <strong>95% Match</strong>
+
+                                        <div class="match-bar">
+                                            <div style="width:95%"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="opportunity">
+
+                                <div class="opportunity-company-logo deloitte-opportunity">
+                                        <span>D.</span>
+                                </div>
+
+                                <div class="opportunity-info">
+
+                                    <div class="opportunity-title">
+
+                                        <div>
+                                            <h3>
+                                                Data Analyst Intern
+                                            </h3>
+
+                                            <span>
+                                                Deloitte • Gurugram, India
+                                            </span>
+                                        </div>
+
+                                        <i data-lucide="bookmark"></i>
+
+                                    </div>
+
+
+                                    <div class="chips">
+
+                                        <span>Internship</span>
+                                        <span>On-site</span>
+
+                                    </div>
+
+                                    <p>
+                                        Skills: SQL, Excel, Python, Analytics
+                                    </p>
+
+                                    <div class="match-row">
+
+                                        <strong>90% Match</strong>
+
+                                        <div class="match-bar">
+                                            <div style="width:90%"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="opportunity">
+
+                            <div class="opportunity-company-logo tcs-opportunity">
+                                     <span>tcs</span>
+                            </div>
+
+                                <div class="opportunity-info">
+
+                                    <div class="opportunity-title">
+
+                                        <div>
+                                            <h3>
+                                                Graduate Engineer Trainee
+                                            </h3>
+
+                                            <span>
+                                                TCS • Mumbai, India
+                                            </span>
+                                        </div>
+
+                                        <i data-lucide="bookmark"></i>
+
+                                    </div>
+
+
+                                    <div class="chips">
+
+                                        <span>Full-time</span>
+                                        <span>On-site</span>
+
+                                    </div>
+
+                                    <p>
+                                        Skills: C++, OOP, DSA, System Design
+                                    </p>
+
+                                    <div class="match-row">
+
+                                        <strong>88% Match</strong>
+
+                                        <div class="match-bar">
+                                            <div style="width:88%"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <button class="outline-button">
+                            Browse All Opportunities
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+
+                    </section>
+
+
+
+                    <!-- EVENTS -->
+
+                    <section class="card events-card">
+
+                        <div class="card-header">
+
+                            <h2>Upcoming Events</h2>
+
+                            <a href="#">
+                                View Calendar
+                            </a>
+
+                        </div>
+
+
+                        <div class="event-list">
+
+
+                            <div class="event">
+
+                                <div class="event-icon">
+                                    <i data-lucide="calendar"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Industry-Academia Meet 2025
+                                    </h3>
+
+                                    <span>
+                                        May 24, 2025 • 10:00 AM
+                                    </span>
+                                </div>
+
+                                <i data-lucide="chevron-right"></i>
+
+                            </div>
+
+
+                            <div class="event">
+
+                                <div class="event-icon">
+                                    <i data-lucide="calendar"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Workshop: Resume Building
+                                    </h3>
+
+                                    <span>
+                                        May 26, 2025 • 2:00 PM
+                                    </span>
+                                </div>
+
+                                <i data-lucide="chevron-right"></i>
+
+                            </div>
+
+
+                            <div class="event">
+
+                                <div class="event-icon">
+                                    <i data-lucide="calendar"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Guest Lecture: AI in Industry
+                                    </h3>
+
+                                    <span>
+                                        May 28, 2025 • 11:00 AM
+                                    </span>
+                                </div>
+
+                                <i data-lucide="chevron-right"></i>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- PORTFOLIO -->
+
+                    <section class="card portfolio-card">
+
+                        <div class="portfolio-header">
+
+                            <div>
+                                <h2>Complete Your Digital Portfolio</h2>
+                                <span>80% Completed</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="portfolio-progress">
+                            <div></div>
+                        </div>
+
+
+                        <ul>
+
+                            <li class="completed">
+                                <i data-lucide="check-circle"></i>
+                                Add your latest project
+                            </li>
+
+                            <li class="completed">
+                                <i data-lucide="check-circle"></i>
+                                Upload Internship certificate
+                            </li>
+
+                            <li class="completed">
+                                <i data-lucide="check-circle"></i>
+                                Add skills & endorsements
+                            </li>
+
+                            <li>
+                                <i data-lucide="circle"></i>
+                                Write a short bio
+                            </li>
+
+                        </ul>
+
+
+                        <button class="primary-button">
+                            Go to Portfolio
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="/css/dashboard.js"></script>
+
 </body>
 </html>

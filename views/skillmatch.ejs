@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VidyaSetu | Skill Match</title>
+  <link rel="stylesheet" href="/css/skillmatch.css">
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="logo">
+      <div class="logo-box">VS</div>
+      <div class="logo-text">
+        <h1>VidyaSetu</h1>
+        <span>Connecting × Learning</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="#">Features</a>
+
+      <a href="/test">Test Serise</a>
+      <a href="#" class="active">Skill Match</a>
+    </nav>
+
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="sm-hero">
+    <span class="badge">● Smart Skill–Company Matcher</span>
+    <h2>Match <span class="highlight">Skills.</span> Find <span class="highlight">Companies.</span></h2>
+    <p>Enter what you know and discover companies you're eligible for, or pick a company to see exactly what skills and
+      role they're hiring for.</p>
+  </section>
+
+  <!-- ===== MODE SWITCH ===== -->
+  <section class="mode-switch-wrap">
+    <div class="mode-switch">
+      <button id="modeSkillBtn" class="mode-btn active">🎯 I'll Give My Skills</button>
+      <button id="modeCompanyBtn" class="mode-btn">🏢 I'll Choose a Company</button>
+    </div>
+  </section>
+
+  <!-- ===== MODE 1: ENTER SKILLS ===== -->
+  <section id="skillMode" class="panel">
+    <div class="card input-card">
+      <h3>What skills do you have?</h3>
+      <p class="muted">Type a skill and press Enter, or click the suggestions below.</p>
+
+      <div class="skill-input-row">
+        <input type="text" id="skillInput" placeholder="e.g. JavaScript, Python, Figma...">
+        <button id="addSkillBtn">Add</button>
+      </div>
+
+      <div class="suggested-skills" id="suggestedSkills"></div>
+
+      <div class="chosen-skills" id="chosenSkills"></div>
+
+      <button id="findMatchBtn" class="primary-btn">Find Matching Companies →</button>
+    </div>
+
+    <div id="skillResults" class="results-grid"></div>
+  </section>
+
+  <!-- ===== MODE 2: CHOOSE COMPANY ===== -->
+  <section id="companyMode" class="panel hidden">
+    <div class="card input-card">
+      <h3>Choose a company</h3>
+      <p class="muted">Step 1: pick a company. Step 2: pick the role you want.</p>
+      <div class="company-select-row">
+        <select id="companySelect">
+          <option value="">-- Select a company --</option>
+        </select>
+        <select id="roleSelect" class="hidden">
+          <option value="">-- Select a role --</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="companyResult" class="company-detail-card hidden"></div>
+  </section>
+
+  <script src="/js/skillmatch.js"></script>
+</body>
+
+</html
