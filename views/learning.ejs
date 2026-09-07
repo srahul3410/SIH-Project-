@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VidyaSetu | Learning Programs</title>
+  <link rel="stylesheet" href="/css/learning.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>        
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge">VS</div>
+        <span class="brand-name">VidyaSetu</span>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="dashboard.html" class="nav-item">
+          <i class="ri-dashboard-line"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="/skillmatch" class="nav-item">
+          <i class="ri-file-list-3-line"></i>
+          <span>Skill Assessment</span>
+        </a>
+        <a href="/skillmatch" class="nav-item">
+          <i class="ri-git-branch-line"></i>
+          <span>Skill Map &amp; Career</span>
+        </a>
+        <a href="/learning" class="nav-item active">
+          <i class="ri-book-open-line"></i>
+          <span>Learning Programs</span>
+        </a>
+        <a href="/internship" class="nav-item">
+          <i class="ri-briefcase-line"></i>
+          <span>Internships</span>
+        </a>
+        <a href="/placement" class="nav-item">
+          <i class="ri-bar-chart-box-line"></i>
+          <span>Placements</span>
+        </a>
+        <a href="/portfolio" class="nav-item">
+          <i class="ri-wallet-3-line"></i>
+          <span>Digital Portfolio</span>
+        </a>
+
+        <div class="nav-category">ACADEMICS</div>
+
+        <a href="#" class="nav-item">
+          <i class="ri-graduation-cap-line"></i>
+          <span>Faculty Opportunities</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="ri-presentation-line"></i>
+          <span>FDPs &amp; Training</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="ri-flask-line"></i>
+          <span>Research &amp; Projects</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div>
+          <span class="topbar-subtitle">STUDENT DASHBOARD</span>
+          <h1 class="page-title">Curated Learning Programs</h1>
+        </div>
+        
+        <div class="topbar-actions">
+          <div class="search-bar">
+            <i class="ri-search-line"></i>
+            <input type="text" placeholder="Search playlists...">
+          </div>
+          <div class="icon-btn">
+            <i class="ri-notification-3-line"></i>
+            <span class="badge">3</span>
+          </div>
+          <div class="user-profile">
+            <div class="avatar">AK</div>
+            <div class="user-meta">
+              <span class="name">Abhay Kumar</span>
+              <span class="role">Student</span>
+            </div>
+            <i class="ri-arrow-down-s-line"></i>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="welcome-banner">
+          <div>
+            <h2>Verified Learning Playlists</h2>
+            <p>Direct curated lecture series from CodeWithHarry and Apna College mapped to tech interviews.</p>
+          </div>
+          <span class="banner-tag">Verified Tracks</span>
+        </div>
+
+        <div class="courses-grid">
+          
+          <div class="course-card">
+            <div class="channel-badge cwh-tag">CodeWithHarry</div>
+            <div class="course-icon bg-purple"><i class="ri-terminal-box-line"></i></div>
+            <h3>DSA in C Language</h3>
+            <p class="course-desc">Pointers, memory structures, recursion, dynamic allocation, and core algorithm design.</p>
+            <div class="course-meta">
+              <span><i class="ri-play-list-2-line"></i> 8 Lessons</span>
+              <span><i class="ri-cpu-line"></i> Core Architecture</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-primary" onclick="openCourseModal('dsa_c')">
+                <i class="ri-play-circle-line"></i> Watch Playlist
+              </button>
+              <a href="https://youtube.com/playlist?list=PLu0W_9lII9aiXlHcLx-mDH1Qul38wD3QR" target="_blank" class="btn btn-outline" title="Open on YouTube">
+  <i class="ri-external-link-line"></i>
+</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="channel-badge ac-tag">Apna College</div>
+            <div class="course-icon bg-blue"><i class="ri-code-box-line"></i></div>
+            <h3>DSA in Java Placement Series</h3>
+            <p class="course-desc">Core Java, Arrays, Recursion, Binary Trees, Graphs, and DP with Shradha Khapra.</p>
+            <div class="course-meta">
+              <span><i class="ri-play-list-2-line"></i> 8 Lessons</span>
+              <span><i class="ri-shield-check-line"></i> Placement Ready</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-primary" onclick="openCourseModal('dsa_java')">
+                <i class="ri-play-circle-line"></i> Watch Playlist
+              </button>
+              <a href="https://youtube.com/playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt" target="_blank" class="btn btn-outline" title="Open on YouTube">
+                <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="channel-badge cwh-tag">CodeWithHarry</div>
+            <div class="course-icon bg-mint"><i class="ri-layout-3-line"></i></div>
+            <h3>Frontend Web Development</h3>
+            <p class="course-desc">Modern HTML5 semantics, responsive CSS3 layouts, Flexbox, Grid, and DOM JavaScript.</p>
+            <div class="course-meta">
+              <span><i class="ri-play-list-2-line"></i> 8 Lessons</span>
+              <span><i class="ri-window-line"></i> UI/UX Engine</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-primary" onclick="openCourseModal('frontend')">
+                <i class="ri-play-circle-line"></i> Watch Playlist
+              </button>
+              <a href="https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w" target="_blank" class="btn btn-outline" title="Open on YouTube">
+                <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="channel-badge cwh-tag">CodeWithHarry</div>
+            <div class="course-icon bg-orange"><i class="ri-server-line"></i></div>
+            <h3>Backend Web Development</h3>
+            <p class="course-desc">Node.js event architecture, Express routing, HTTP middlewares, and MongoDB integration.</p>
+            <div class="course-meta">
+              <span><i class="ri-play-list-2-line"></i> 6 Lessons</span>
+              <span><i class="ri-database-2-line"></i> RESTful APIs</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-primary" onclick="openCourseModal('backend')">
+                <i class="ri-play-circle-line"></i> Watch Playlist
+              </button>
+              <a href="https://youtube.com/playlist?list=PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w" target="_blank" class="btn btn-outline" title="Open on YouTube">
+                <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="channel-badge cwh-tag">CodeWithHarry</div>
+            <div class="course-icon bg-yellow"><i class="ri-file-code-line"></i></div>
+            <h3>Python Masterclass</h3>
+            <p class="course-desc">Comprehensive 100 Days of Code covering syntax, functional modules, OOP, and automation.</p>
+            <div class="course-meta">
+              <span><i class="ri-play-list-2-line"></i> 8 Lessons</span>
+              <span><i class="ri-terminal-line"></i> Full Track</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-primary" onclick="openCourseModal('python')">
+                <i class="ri-play-circle-line"></i> Watch Playlist
+              </button>
+              <a href="https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg" target="_blank" class="btn btn-outline" title="Open on YouTube">
+                <i class="ri-external-link-line"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="playlistModal" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-top">
+        <div class="modal-info">
+          <h3 id="currentCourseTitle">Course Playlist</h3>
+          <p id="currentVideoTitle">Select a lecture to start streaming</p>
+        </div>
+        <button class="modal-close-btn" onclick="closeCourseModal()">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="player-panel">
+          <div class="video-frame-wrapper">
+            <iframe 
+              id="activeVideoPlayer" 
+              src="" 
+              title="Lecture Player" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="playlist-panel">
+          <div class="playlist-header">
+            <span>Lectures &amp; Modules</span>
+            <span class="lecture-count" id="lectureCounter">0 Lessons</span>
+          </div>
+          <div class="lecture-list" id="lectureListContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/learning.js"></script>
+</body>
+</html>
