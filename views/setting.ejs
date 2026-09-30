@@ -1,1 +1,42 @@
-//css will be also there
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Settings | VidyaSetu</title>
+	<link rel="stylesheet" href="/css/sidebar.css">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<style>
+		body {
+			min-height: 100vh;
+			background: #f5f7fb;
+			color: #1f2937;
+			font-family: Arial, sans-serif;
+		}
+
+		.settings-content {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 40px 32px;
+		}
+
+		.settings-content p {
+			margin-top: 8px;
+			color: #6b7280;
+		}
+
+		@media (max-width: 760px) {
+			.settings-content {
+				padding: 28px 20px;
+			}
+		}
+	</style>
+</head>
+<body class="has-dashboard-sidebar">
+	<%- include("partials/sidebar") %>
+	<main class="settings-content">
+		<h1>Settings</h1>
+		<p>Manage your account preferences.</p>
+	</main>
+</body>
+</html>

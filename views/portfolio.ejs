@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VidyaSetu | Digital Portfolio</title>
     <link rel="stylesheet" href="/css/portfolio.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,8 @@
 <div class="portfolio-layout">
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- ================= SIDEBAR ================= -->
+    <%- include("partials/sidebar") %>
+    <!-- Legacy sidebar replaced by the shared Dashboard sidebar.
     <aside class="sidebar" id="sidebar">
         <div class="brand">
             <div class="brand-logo">VS</div>
@@ -36,6 +38,10 @@
                 <a href="/dashboard" class="nav-item">
                     <i data-lucide="layout-dashboard"></i>
                     <span>Dashboard</span>
+                </a>
+                <a href="/profile" class="nav-item">
+                    <i data-lucide="user-round"></i>
+                    <span>Profile</span>
                 </a>
                 <a href="/skillmatch" class="nav-item">
                     <i data-lucide="clipboard-check"></i>
@@ -60,6 +66,18 @@
                 <a href="/portfolio" class="nav-item active">
                     <i data-lucide="folder-kanban"></i>
                     <span>Portfolio</span>
+                </a>
+                <a href="/setting" class="nav-item">
+                    <i data-lucide="settings"></i>
+                    <span>Setting</span>
+                </a>
+                <a href="/help" class="nav-item">
+                    <i data-lucide="headphones"></i>
+                    <span>Help &amp; Support</span>
+                </a>
+                <a href="/logout" class="nav-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Log Out</span>
                 </a>
             </div>
 
@@ -122,7 +140,7 @@
             </div>
             <button>Contact Support</button>
         </div>
-    </aside>
+    </aside> -->
 
     <!-- ================= MAIN CONTENT ================= -->
     <main class="main-content">

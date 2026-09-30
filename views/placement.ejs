@@ -8,11 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/placement.css" />
+  <link rel="stylesheet" href="/css/sidebar.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="placement-page">
   <div class="dashboard-wrapper">
+    <%- include("partials/sidebar") %>
+    <!-- Legacy sidebar replaced by the shared Dashboard sidebar.
     
-    <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
       <div class="logo-area">
         <div class="logo-box">VS</div>
@@ -28,12 +31,15 @@
         <span class="nav-heading">MAIN</span>
         <ul class="nav-items">
           <li class="nav-item"><a href="/dashboard">Dashboard</a></li>
+          <li class="nav-item"><a href="/profile">Profile</a></li>
           <li class="nav-item"><a href="/skillmatch">Skill Analysis</a></li>
-          <li class="nav-item"><a href="/skillmatch">Skill </a></li>
           <li class="nav-item"><a href="/learning">Learning Programs</a></li>
           <li class="nav-item"><a href="/internship">Internships</a></li>
           <li class="nav-item active-nav"><a href="/placement">Placements</a></li>
           <li class="nav-item"><a href="/portfolio">Digital Portfolio</a></li>
+          <li class="nav-item"><a href="/setting">Setting</a></li>
+          <li class="nav-item"><a href="/help">Help &amp; Support</a></li>
+          <li class="nav-item"><a href="/logout">Log Out</a></li>
         </ul>
       </div>
 
@@ -45,7 +51,17 @@
           <li class="nav-item"><a href="#">Research & Projects</a></li>
         </ul>
       </div>
-    </aside>
+
+      <div class="nav-group">
+        <span class="nav-heading">COLLABORATION</span>
+        <ul class="nav-items">
+          <li class="nav-item"><a href="#">Mentorship</a></li>
+          <li class="nav-item"><a href="#">Workshops &amp; Events</a></li>
+          <li class="nav-item"><a href="#">Live Projects</a></li>
+          <li class="nav-item"><a href="#">Innovation Challenges</a></li>
+        </ul>
+      </div>
+    </aside> -->
 
     <!-- RIGHT MAIN BODY -->
     <div class="main-body-container">

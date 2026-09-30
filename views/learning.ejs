@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VidyaSetu | Learning Programs</title>
   <link rel="stylesheet" href="/css/learning.css">
+  <link rel="stylesheet" href="/css/sidebar.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>        
 
   <div class="app-layout">
+    <%- include("partials/sidebar") %>
+    <!-- Legacy sidebar replaced by the shared Dashboard sidebar.
     <aside class="sidebar">
       <div class="brand">
         <div class="brand-badge">VS</div>
@@ -17,9 +21,13 @@
       </div>
 
       <nav class="nav-menu">
-        <a href="dashboard.html" class="nav-item">
+        <a href="/dashboard" class="nav-item">
           <i class="ri-dashboard-line"></i>
           <span>Dashboard</span>
+        </a>
+        <a href="/profile" class="nav-item">
+          <i class="ri-user-line"></i>
+          <span>Profile</span>
         </a>
         <a href="/skillmatch" class="nav-item">
           <i class="ri-file-list-3-line"></i>
@@ -45,6 +53,18 @@
           <i class="ri-wallet-3-line"></i>
           <span>Digital Portfolio</span>
         </a>
+        <a href="/setting" class="nav-item">
+          <i class="ri-settings-3-line"></i>
+          <span>Setting</span>
+        </a>
+        <a href="/help" class="nav-item">
+          <i class="ri-customer-service-line"></i>
+          <span>Help &amp; Support</span>
+        </a>
+        <a href="/logout" class="nav-item">
+          <i class="ri-logout-box-line"></i>
+          <span>Log Out</span>
+        </a>
 
         <div class="nav-category">ACADEMICS</div>
 
@@ -60,8 +80,27 @@
           <i class="ri-flask-line"></i>
           <span>Research &amp; Projects</span>
         </a>
+
+        <div class="nav-category">COLLABORATION</div>
+
+        <a href="#" class="nav-item">
+          <i class="ri-team-line"></i>
+          <span>Mentorship</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="ri-calendar-event-line"></i>
+          <span>Workshops &amp; Events</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="ri-folder-open-line"></i>
+          <span>Live Projects</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="ri-lightbulb-line"></i>
+          <span>Innovation Challenges</span>
+        </a>
       </nav>
-    </aside>
+    </aside> -->
 
     <div class="main-wrapper">
       <header class="topbar">

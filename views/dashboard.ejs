@@ -7,6 +7,7 @@
     <title>VidyaSetu | Dashboard</title>
 
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,131 +20,12 @@
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-Abhay
 <body>
 
 <div class="dashboard-layout">
 
     <!-- ================= SIDEBAR ================= -->
-
-    <aside class="sidebar" id="sidebar">
-
-        <div class="brand">
-            <div class="brand-logo">VS</div>
-
-            <div class="brand-text">
-                <h2>VidyaSetu</h2>
-                <span>Connecting × Learning</span>
-            </div>
-        </div>
-
-
-        <nav class="sidebar-nav">
-
-            <div class="nav-section">
-
-                <p class="nav-title">MAIN</p>
-
-                <a href="/dashboard" class="nav-item active">
-                    <i data-lucide="layout-dashboard"></i>
-                    <span>Dashboard</span>
-                </a>
-
-                <a href="/profile" class="nav-item">
-                    <i data-lucide="clipboard-check"></i>
-                    <span>Profile</span>
-                </a>
-
-                <a href="/skillmatch" class="nav-item">
-                    <i data-lucide="map"></i>
-                    <span>Skill Analysis</span>
-                </a>
-
-                <a href="/learning" class="nav-item">
-                    <i data-lucide="book-open"></i>
-                    <span>Learnings</span>
-                </a>
-
-                <a href="/Internship" class="nav-item">
-                    <i data-lucide="briefcase"></i>
-                    <span>Internships</span>
-                </a>
-
-                <a href="/placement" class="nav-item">
-                    <i data-lucide="building-2"></i>
-                    <span>Placements</span>
-                </a>
-
-                <a href="/portfolio" class="nav-item">
-                    <i data-lucide="folder-kanban"></i>
-                    <span>Portfolio</span>
-                </a>
-
-                <a href="#" class="nav-item">
-                    <i data-lucide="folder-kanban"></i>
-                    <span>Setting</span>
-                </a>
-
-                <a href="#" class="nav-item">
-                    <i data-lucide="folder-kanban"></i>
-                    <span>Help & Support</span>
-                </a>
-
-                <a href="#" class="nav-item">
-                    <i data-lucide="folder-kanban"></i>
-                    <span>Log Out</span>
-                </a>
-
-            </div>
-               
-
-
-            <div class="nav-section">
-
-                <p class="nav-title">COLLABORATION</p>
-
-                <a href="#" class="nav-item">
-                    <i data-lucide="users"></i>
-                    <span>Mentorship</span>
-                </a>
-
-                <a href="#" class="nav-item">
-                    <i data-lucide="calendar-days"></i>
-                    <span>Workshops & Events</span>
-                </a>
-
-                <a href="#" class="nav-item">
-                    <i data-lucide="folder-open"></i>
-                    <span>Live Projects</span>
-                </a>
-
-                <a href="#" class="nav-item">
-                    <i data-lucide="lightbulb"></i>
-                    <span>Innovation Challenges</span>
-                </a>
-
-            </div>
-
-
-        </nav>
-
-
-        <div class="sidebar-help">
-
-            <div class="help-icon">
-                <i data-lucide="headphones"></i>
-            </div>
-
-            <div>
-                <strong>Need Help?</strong>
-                <p>Our support team is here to help you 24/7</p>
-            </div>
-
-            <button>Contact Support</button>
-
-        </div>
-
-    </aside>
+    <%- include("partials/sidebar") %>
 
 
     <!-- ================= MAIN ================= -->
@@ -152,58 +34,12 @@ Abhay
 
         <!-- TOP NAVBAR -->
 
-        <header class="topbar">
 
-            <button class="menu-button" id="menuButton">
-                <i data-lucide="menu"></i>
-            </button>
-
-
-            <div class="search-box">
-
-                <i data-lucide="search"></i>
-
-                <input
-                    type="text"
-                    placeholder="Search opportunities, skills, programs, people..."
-                >
-
-            </div>
-
-
-            <div class="topbar-right">
-
-                <button class="icon-button notification">
-                    <i data-lucide="bell"></i>
-                    <span>3</span>
-                </button>
-
-                <button class="icon-button">
-                    <i data-lucide="mail"></i>
-                </button>
-
-
-                <div class="profile">
-
-                    <div class="profile-avatar">
-                        AK
-                    </div>
-
-                    <div class="profile-info">
-                        <strong> <%=user.name%> </strong>
-                        <span>Student</span>
-                    </div>
-
-                    <i data-lucide="chevron-down"></i>
-
-                </div>
-
-            </div>
-
-        </header>
+           
 
 
         <!-- ================= DASHBOARD ================= -->
+ 
 
         <div class="dashboard-container">
 

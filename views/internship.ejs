@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VidyaSetu | Internships</title>
   <link rel="stylesheet" href="/css/internship.css" />
+  <link rel="stylesheet" href="/css/sidebar.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="internship-page">
 
   <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
 
+  <%- include("partials/sidebar") %>
+  <!-- Legacy sidebar replaced by the shared Dashboard sidebar.
   <aside id="sidebar">
     <div class="brand-section">
       <div class="brand-left">
@@ -43,6 +47,7 @@
             <span class="nav-text">Dashboard</span>
           </a>
         </li>
+        <li><a href="/profile" class="nav-link" title="Profile"><span class="nav-text">Profile</span></a></li>
         <li>
           <a href="/skillmatch" class="nav-link" title="Skill Assessment">
             <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
@@ -79,6 +84,9 @@
             <span class="nav-text">Digital Portfolio</span>
           </a>
         </li>
+        <li><a href="/setting" class="nav-link" title="Setting"><span class="nav-text">Setting</span></a></li>
+        <li><a href="/help" class="nav-link" title="Help &amp; Support"><span class="nav-text">Help &amp; Support</span></a></li>
+        <li><a href="/logout" class="nav-link" title="Log Out"><span class="nav-text">Log Out</span></a></li>
       </ul>
 
       <div class="nav-group-title">Academicians</div>
@@ -159,7 +167,7 @@
         <button type="button" class="btn-contact-support">Contact Support</button>
       </div>
     </div>
-  </aside>
+  </aside> -->
 
   <div class="main-wrapper">
     <header>
