@@ -1,4 +1,4 @@
-<img width="1896" height="908" alt="landing" src="https://github.com/user-attachments/assets/5e9aa4a5-aacb-4220-9fbf-df6685872eaf" />[README.md](https://github.com/user-attachments/files/32925704/README.md)
+[README (1).md](https://github.com/user-attachments/files/32926505/README.1.md)
 <div align="center">
 
 # 🎓 VidyaSetu
@@ -14,7 +14,7 @@ A smart academia–industry platform that connects **students**, **academicians*
 
 [Live Demo](#) · [Report Bug](#) · [Request Feature](#)
 
-![VidyaSetu Landing Page](screenshots/landing.png)
+![VidyaSetu Landing Page](Screenshot/landing.png)
 
 </div>
 
@@ -69,29 +69,29 @@ VidyaSetu solves this by:
 ### Student Dashboard
 Skill readiness, radar chart, top strengths, areas to improve and recommended opportunities.
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](Screenshot/dashboard.png)
 
 ### Profile
 Professional identity with skills, projects, certificates and coding profile links.
 
-![Profile](screenshots/profile.png)
+![Profile](Screenshot/profile.png)
 
 ### Skill Analysis
 Pick your skills or choose a company, and get matched instantly.
 
 | Enter Skills | Matching Companies |
 |--------------|--------------------|
-| ![Skill Analysis](screenshots/skill-analysis.png) | ![Skill Results](screenshots/skill-results.png) |
+| ![Skill Analysis](Screenshot/skill-analysis.png) | ![Skill Results](Screenshot/skill-results.png) |
 
 ### Internships
 Verified internships with match percentage and smart filters.
 
-![Internships](screenshots/internships.png)
+![Internships](Screenshot/internships.png)
 
 ### Placements
 Eligibility check based on CGPA, skills and language proficiency.
 
-![Placements](screenshots/placements.png)
+![Placements](Screenshot/placements.png)
 
 ## 👥 User Roles
 
@@ -158,7 +158,7 @@ DATABASE_URL=your_database_url
 ```
 vidyasetu/
 ├── public/          # Static files (images, icons)
-├── screenshots/     # README screenshots
+├── Screenshot/     # README screenshots
 ├── src/
 │   ├── pages/       # Landing, Dashboard, Profile, Skill Analysis, Internships, Placements
 │   ├── components/  # Reusable UI components
