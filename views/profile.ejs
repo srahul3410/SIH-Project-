@@ -103,10 +103,10 @@
                     <span></span>
                 </button>
                 <div class="small-avatar">
-                    S
+                    <%= user.name.trim().charAt(0).toUpperCase() %>
                 </div>
                 <div class="user-mini">
-                    <strong>Saniya Siddique</strong>
+                    <strong><%= user.name %></strong>
                     <small>Student</small>
                 </div>
             </div>
@@ -133,11 +133,11 @@
                 <div class="profile-top">
                     <!-- AVATAR -->
                     <div class="profile-image">
-                        S
+                        <%= user.name.trim().charAt(0).toUpperCase() %>
                     </div>
                     <!-- DETAILS -->
                     <div class="profile-details">
-                        <h2>Saniya Siddique</h2>
+                        <h2><%= user.name %></h2>
                         <p class="course">
                             <i class="fa-solid fa-graduation-cap"></i>
                             B.Tech CSE • 2nd Year

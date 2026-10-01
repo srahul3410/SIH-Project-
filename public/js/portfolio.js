@@ -3,6 +3,9 @@
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
+    const accountName = document.body.dataset.accountName;
+    const accountEmail = document.body.dataset.accountEmail;
+
     if (window.lucide) {
         lucide.createIcons();
     }
@@ -587,11 +590,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function loadProfile() {
-        if (!userProfile) return;
+        if (!userProfile) userProfile = {};
+        userProfile.name = accountName;
+        userProfile.email = accountEmail;
 
         const textMapping = {
-            userName: userProfile.name,
-            topNavName: userProfile.name,
+            userName: accountName,
+            topNavName: accountName,
             userLocation: userProfile.location,
             userEmail: userProfile.email,
             userPhone: userProfile.phone,
@@ -623,15 +628,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (userImg) userImg.src = userProfile.img;
         }
 
-        if (userProfile.name) {
-            const parts = userProfile.name.trim().split(" ");
-            const avatar = document.getElementById("topNavAvatar");
-            if (avatar) avatar.innerText = parts[0][0].toUpperCase() + (parts[1] ? parts[1][0].toUpperCase() : "");
-        }
+        const avatar = document.getElementById("topNavAvatar");
+        if (avatar) avatar.innerText = accountName.trim().charAt(0).toUpperCase();
     }
 
     openEditBtn?.addEventListener("click", () => {
-        document.getElementById("inputName").value = document.getElementById("userName")?.innerText || "";
+        document.getElementById("inputName").value = accountName;
         document.getElementById("inputLocation").value = document.getElementById("userLocation")?.innerText || "";
         document.getElementById("inputEmail").value = document.getElementById("userEmail")?.innerText || "";
         document.getElementById("inputPhone").value = document.getElementById("userPhone")?.innerText || "";
@@ -684,7 +686,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         userProfile = {
-            name: document.getElementById("inputName").value.trim(),
+            name: accountName,
             img: finalAvatar,
             location: document.getElementById("inputLocation").value.trim(),
             email: document.getElementById("inputEmail").value.trim(),

@@ -190,9 +190,9 @@
           <span class="badge">3</span>
         </div>
         <div class="user-profile">
-          <div class="user-avatar">AK</div>
+          <div class="user-avatar"><%= user.name.trim().charAt(0).toUpperCase() %></div>
           <div class="user-meta">
-            <div class="name">Abhay Kumar</div>
+            <div class="name"><%= user.name %></div>
             <div class="role">Student</div>
           </div>
         </div>
@@ -471,17 +471,17 @@
         <form id="quick-apply-form" onsubmit="handleApplySubmit(event)">
           <div class="form-group">
             <label>Applicant Name</label>
-            <input type="text" value="Abhay Kumar" required />
+            <input type="text" value="<%= user.name %>" required />
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" value="abhay.kumar@vidyasetu.edu" required />
+            <input type="email" value="<%= user.email %>" required />
           </div>
           <div class="form-group">
             <label>Current Resume</label>
             <div class="file-box">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d826a" stroke-width="2"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
-              <span>Abhay_Kumar_Resume_2026.pdf</span>
+              <span><%= user.name.trim().replace(/\s+/g, "_") %>_Resume_2026.pdf</span>
             </div>
           </div>
           <button type="submit" class="btn-submit" id="submit-btn">Submit Application</button>

@@ -8,7 +8,7 @@ const { MongoStore } = require("connect-mongo");
 
 const adminEmail = process.env.ADMIN_EMAIL || "admin@vidyasetu.com";
 const adminPassword = process.env.ADMIN_PASSWORD || "Admin@123";
-const mongo_url = 'mongodb://127.0.0.1:27017/VidyaSetu';
+const mongo_url = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/VidyaSetu';
 
 app.use(session({
     secret: "vidyasetu-secret",
@@ -25,14 +25,18 @@ app.use(session({
     }
 }));
 
-main()
-    .then(() => {
-        console.log("DB connected !!")
-    })
-    .catch(err => console.log(err));
 async function main() {
     await mongoose.connect(mongo_url);
+    console.log("DB connected !!");
+    app.listen(process.env.PORT || 8080, () => {
+        console.log("server is running !!");
+    });
 }
+
+main().catch(err => {
+    console.error("DB connection failed:", err);
+    process.exitCode = 1;
+});
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -43,6 +47,28 @@ app.use((req, res, next) => {
     res.locals.currentPath = req.path;
     next();
 });
+
+async function requireLogin(req, res, next) {
+    try {
+        if (req.session.isAdmin) {
+            req.user = { name: "Admin", email: adminEmail };
+        } else {
+            if (!req.session.userId) {
+                return res.redirect("/login");
+            }
+
+            req.user = await User.findById(req.session.userId);
+            if (!req.user) {
+                req.session.destroy(() => res.redirect("/login"));
+                return;
+            }
+        }
+
+        next();
+    } catch (err) {
+        next(err);
+    }
+}
 
 
 app.get("/", (req, res) => {
@@ -157,53 +183,39 @@ app.post("/login", async (req, res) => {
     }
 });
 
-app.get("/dashboard", async (req, res) => {
-    if (req.session.isAdmin) {
-        return res.render("dashboard", {
-            user: { name: "Admin", email: adminEmail }
-        });
-    }
-
-    if (!req.session.userId) {
-        return res.redirect("/login");
-    }
-    const user = await User.findById(req.session.userId);
-    if (!user) {
-        req.session.destroy();
-        return res.redirect("/login");
-    }
-    res.render("dashboard", { user });
+app.get("/dashboard", requireLogin, (req, res) => {
+    res.render("dashboard", { user: req.user });
 });
 
-app.get("/profile", (req, res)=>{
-    res.render("profile");
+app.get("/profile", requireLogin, (req, res) => {
+    res.render("profile", { user: req.user });
 });
-app.get("/edit", (req, res)=>{
-    res.render("edit");
+app.get("/edit", requireLogin, (req, res) => {
+    res.render("edit", { user: req.user });
 });
-app.get("/skillmatch", (req, res)=>{
-    res.render("skillmatch");
+app.get("/skillmatch", requireLogin, (req, res) => {
+    res.render("skillmatch", { user: req.user });
 });
-app.get("/learning", (req, res)=>{
-    res.render("learning");
+app.get("/learning", requireLogin, (req, res) => {
+    res.render("learning", { user: req.user });
 });
-app.get("/internship", (req, res)=>{
-    res.render("internship");
+app.get("/internship", requireLogin, (req, res) => {
+    res.render("internship", { user: req.user });
 });
-app.get("/placement", (req, res)=>{
-    res.render("placement");
+app.get("/placement", requireLogin, (req, res) => {
+    res.render("placement", { user: req.user });
 });
-app.get("/portfolio", (req, res)=>{
-    res.render("portfolio");
+app.get("/portfolio", requireLogin, (req, res) => {
+    res.render("portfolio", { user: req.user });
 });
-app.get("/setting", (req, res)=>{
-    res.render("setting");
+app.get("/setting", requireLogin, (req, res) => {
+    res.render("setting", { user: req.user });
 });
-app.get("/help", (req, res)=>{
-    res.render("help");
+app.get("/help", requireLogin, (req, res) => {
+    res.render("help", { user: req.user });
 });
-app.get("/test", (req, res)=>{
-    res.render("test");
+app.get("/test", requireLogin, (req, res) => {
+    res.render("test", { user: req.user });
 });
 
 app.get("/logout", (req, res) => {
@@ -212,7 +224,12 @@ app.get("/logout", (req, res) => {
 
 
 
-app.listen(8080, (req, res) => {
-    console.log("server is running !!")
-})
+
+
+
+
+
+
+
+
 

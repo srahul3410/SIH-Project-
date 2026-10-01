@@ -16,7 +16,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body>
+<body data-account-name="<%= user.name %>" data-account-email="<%= user.email %>">
 
 <div class="portfolio-layout">
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -165,9 +165,9 @@
                     <i data-lucide="mail"></i>
                 </button>
                 <div class="profile">
-                    <div class="profile-avatar" id="topNavAvatar">AK</div>
+                    <div class="profile-avatar" id="topNavAvatar"><%= user.name.trim().charAt(0).toUpperCase() %></div>
                     <div class="profile-info">
-                        <strong id="topNavName">Abhay Kumar</strong>
+                        <strong id="topNavName"><%= user.name %></strong>
                         <span>Student</span>
                     </div>
                     <i data-lucide="chevron-down"></i>
@@ -204,13 +204,13 @@
                     <input type="file" id="directAvatarInput" accept="image/*" style="display: none;">
 
                     <div class="hero-info">
-                        <h2 id="userName">Abhay Kumar</h2>
+                        <h2 id="userName"><%= user.name %></h2>
                         <h4 id="userDegree">B.Tech Computer Science and Engineering</h4>
                         <p id="userBio">Click 'Edit Profile & Education' to add your bio and career interests.</p>
 
                         <div class="contact-chips">
                             <span><i data-lucide="map-pin"></i> <span id="userLocation">Set Location</span></span>
-                            <span><i data-lucide="mail"></i> <span id="userEmail">abhaykumar@email.com</span></span>
+                            <span><i data-lucide="mail"></i> <span id="userEmail"><%= user.email %></span></span>
                             <span><i data-lucide="phone"></i> <span id="userPhone">+91 Add Phone</span></span>
                         </div>
 
@@ -472,7 +472,7 @@
                     <h3>Interested in working together?</h3>
                     <p>Feel free to reach out for opportunities, collaborations or networking.</p>
                 </div>
-                <a href="mailto:abhaykumar@email.com" class="btn-cta-contact">
+                <a href="mailto:<%= user.email %>" class="btn-cta-contact">
                     Contact Me <i data-lucide="arrow-right"></i>
                 </a>
             </div>
