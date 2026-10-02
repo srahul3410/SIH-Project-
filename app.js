@@ -221,7 +221,10 @@ app.get("/test", requireLogin, (req, res) => {
 app.get("/logout", (req, res) => {
     req.session.destroy(() => res.redirect("/"));
 });
-
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 
 
