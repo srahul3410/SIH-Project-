@@ -24,7 +24,7 @@ app.use(session({
         httpOnly: true
     }
 }));
-const mongo_url = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/VidyaSetu";
+mongo_url = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/VidyaSetu";
 async function main() {
     await mongoose.connect(mongo_url);
     console.log("DB connected !!");
