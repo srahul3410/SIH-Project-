@@ -9,7 +9,12 @@ const MongoStore = require("connect-mongo"); // 2. Fixed import (removed curly b
 
 const adminEmail = process.env.ADMIN_EMAIL || "admin@vidyasetu.com";
 const adminPassword = process.env.ADMIN_PASSWORD || "Admin@123";
-const mongoUrl = process.env.MONGODB_URI || process.env.MONGO_URI || "mongodb://127.0.0.1:27017/VidyaSetu";
+const mongoUrl = process.env.MONGODB_URI || process.env.MONGO_URI;
+
+if (!mongoUrl) {
+    console.error("FATAL ERROR: Neither MONGODB_URI nor MONGO_URI is set in environment variables!");
+    process.exit(1);
+}
 
 // Session Configuration
 app.use(session({
