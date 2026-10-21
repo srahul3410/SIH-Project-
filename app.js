@@ -1,21 +1,23 @@
+require('dotenv').config(); // 1. Added dotenv at top
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const User = require("./models/user.js")
+const User = require("./models/user.js");
 const path = require('path');
 const session = require("express-session");
-const { MongoStore } = require("connect-mongo");
+const MongoStore = require("connect-mongo"); // 2. Fixed import (removed curly braces)
 
 const adminEmail = process.env.ADMIN_EMAIL || "admin@vidyasetu.com";
 const adminPassword = process.env.ADMIN_PASSWORD || "Admin@123";
-const mongo_url = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/VidyaSetu';
+const mongoUrl = process.env.MONGODB_URI || process.env.MONGO_URI || "mongodb://127.0.0.1:27017/VidyaSetu";
 
+// Session Configuration
 app.use(session({
-    secret: "vidyasetu-secret",
+    secret: process.env.SESSION_SECRET || "vidyasetu-secret",
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: mongo_url,
+        mongoUrl: mongoUrl,
         collectionName: "sessions",
         ttl: 60 * 60 * 24 * 30
     }),
@@ -24,12 +26,14 @@ app.use(session({
         httpOnly: true
     }
 }));
-mongo_url = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/VidyaSetu";
+
 async function main() {
-    await mongoose.connect(mongo_url);
-    console.log("DB connected !!");
-    app.listen(process.env.PORT || 8080, () => {
-        console.log("server is running !!");
+    await mongoose.connect(mongoUrl);
+    console.log("DB connected successfully to Atlas!");
+    
+    const PORT = process.env.PORT || 8080;
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT} !!`);
     });
 }
 
@@ -41,8 +45,10 @@ main().catch(err => {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.use(express.urlencoded({ extended: true }));      //now it will extract data from url
-app.use(express.static(path.join(__dirname, "public")));   //ab public ke file automatic Acess
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // Added for parsing json requests safely
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use((req, res, next) => {
     res.locals.currentPath = req.path;
     next();
@@ -63,18 +69,17 @@ async function requireLogin(req, res, next) {
                 return;
             }
         }
-
         next();
     } catch (err) {
         next(err);
     }
 }
 
-
 app.get("/", (req, res) => {
-    res.render("home.ejs")
-})
-app.get("/learn-More", (req, res)=>{
+    res.render("home.ejs");
+});
+
+app.get("/learn-More", (req, res) => {
     res.render("learnM");
 });
 
@@ -87,20 +92,6 @@ app.get("/login", (req, res) => {
 app.get("/signup", (req, res) => {
     res.render("signup");
 });
-
-
-// app.post("/signup", async (req, res) => {
-//     const { name, email, password } = req.body;
-//     console.log(req.body);
-//     const newUser = new User({
-//         name,
-//         email,
-//         password
-//     });
-//     await newUser.save();
-//     req.session.userId = newUser._id;
-//     res.redirect("/dashboard");
-// });
 
 app.post("/signup", async (req, res) => {
     try {
@@ -120,44 +111,34 @@ app.post("/signup", async (req, res) => {
         if (existingUser) {
             return res.send("Email already registered. Please login.");
         }
+
         const newUser = new User({
             name: normalizedName,
             email: normalizedEmail,
             password
         });
         await newUser.save();
+
         req.session.isAdmin = false;
         req.session.userId = newUser._id;
 
-        await new Promise((resolve, reject) => {
-            req.session.save((err) => err ? reject(err) : resolve());
+        req.session.save((err) => {
+            if (err) {
+                console.error("Session Save Error:", err);
+                return res.status(500).send("Session error");
+            }
+            res.redirect("/dashboard");
         });
-
-        res.redirect("/dashboard");
     } catch (err) {
-        console.log("SIGNUP ERROR:", err);
-        res.status(500).send("Signup failed");
+        console.error("SIGNUP ERROR:", err);
+        res.status(500).send("Signup failed: " + err.message);
     }
 });
-
-
-// app.post("/login", async (req, res) => {
-//     const { email, password } = req.body;
-//     const user = await User.findOne({ email });
-//     if (!user) {
-//         return res.redirect("/login?error=signup");
-//     }
-//     if (user.password !== password) {
-//         return res.redirect("/login?error=wrongpassword");
-//     }
-//     req.session.userId = user._id;
-//     res.redirect("/dashboard");
-// });
 
 app.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
-        const normalizedEmail = email.trim().toLowerCase();
+        const normalizedEmail = (email || "").trim().toLowerCase();
 
         if (normalizedEmail === adminEmail.toLowerCase() && password === adminPassword) {
             req.session.isAdmin = true;
@@ -166,20 +147,28 @@ app.post("/login", async (req, res) => {
 
         console.log("LOGIN EMAIL:", normalizedEmail);
         const user = await User.findOne({ email: normalizedEmail });
-        console.log("FOUND USER:", user);
+        
         if (!user) {
             return res.redirect("/login?error=signup");
         }
         if (user.password !== password) {
             return res.redirect("/login?error=wrongpassword");
         }
+
         req.session.isAdmin = false;
         req.session.userId = user._id;
-        console.log("LOGIN SUCCESS:", user._id);
-        res.redirect("/dashboard");
+
+        req.session.save((err) => {
+            if (err) {
+                console.error("Session Save Error:", err);
+                return res.status(500).send("Session error");
+            }
+            console.log("LOGIN SUCCESS:", user._id);
+            res.redirect("/dashboard");
+        });
     } catch (err) {
-        console.log("LOGIN ERROR:", err);
-        res.status(500).send("Login failed");
+        console.error("LOGIN ERROR:", err);
+        res.status(500).send("Login failed: " + err.message);
     }
 });
 
@@ -221,18 +210,3 @@ app.get("/test", requireLogin, (req, res) => {
 app.get("/logout", (req, res) => {
     req.session.destroy(() => res.redirect("/"));
 });
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-
-
-
-
-
-
-
-
-
-
